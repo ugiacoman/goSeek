@@ -43,6 +43,12 @@ UITextField *gameCodeField;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    
+    CGRect frameRect = gameCodeField.frame;
+    frameRect.size.height = 100;
+    gameCodeField.frame = frameRect;
+    
+    
     [gameCodeField addTarget:gameCodeField
                   action:@selector(resignFirstResponder)
         forControlEvents:UIControlEventEditingDidEndOnExit];

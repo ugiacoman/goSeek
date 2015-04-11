@@ -15,6 +15,8 @@
 @end
 
 @implementation SeekerWaitView
+- (IBAction)playButton:(id)sender {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
