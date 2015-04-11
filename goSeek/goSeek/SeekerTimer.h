@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "network.h"
 
-@interface SeekerTimer : UIViewController
+@interface SeekerTimer : UIViewController{
+     @public NSString *countdown;
+    @public goSeekConnection *server;
+}
 
 @end
 

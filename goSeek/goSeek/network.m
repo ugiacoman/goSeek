@@ -10,6 +10,7 @@
 #import "network.h"
 #import "EventSource.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "SeekerTimer.h"
 
 @interface goSeekConnection ()
 
@@ -18,7 +19,7 @@
 
 @implementation goSeekConnection
 
-- (id)init:(UIViewController *)mainView{
+- (id)init:(ViewController *)mainView{
     _mainView = mainView;
     return self;
 }
@@ -34,6 +35,10 @@
         NSLog(@"%@: %@", e.event, e.data);
         
         //Corynne tells _mainView to do something with Countdown data
+        //Corynne tells _mainView to do something with _roomcode
+        SeekerTimer *view = (SeekerTimer *)_mainView;
+        view->countdown = e.data;
+        
         //e.data will be strings that represent the number of seconds
         //remaining
         
@@ -125,7 +130,8 @@
 
     
     //Corynne tells _mainView to do something with _roomcode
-    
+    ViewController *view = (ViewController *)_mainView;
+    view->gameCode = _roomcode;
     
     NSLog(@"\nDid recieve data\n");
     

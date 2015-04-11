@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "network.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    @public NSString *gameCode;
+    @public goSeekConnection *server;
+}
 @end
 

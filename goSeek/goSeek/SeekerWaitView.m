@@ -7,6 +7,7 @@
 //
 
 #import "SeekerWaitView.h"
+#import "SeekerTimer.h"
 
 @interface SeekerWaitView ()
 
@@ -14,7 +15,7 @@
 
 @end
 UIButton *playButton;
-
+SeekerTimer *timer;
 @implementation SeekerWaitView
 - (IBAction)playButton:(id)sender {
 }
@@ -22,7 +23,7 @@ UIButton *playButton;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _gameCode.text = @"1111";
+    _gameCode.text = roomCode;
     NSLog (@"IN NEW VIEW");
     
 }
@@ -30,6 +31,15 @@ UIButton *playButton;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    timer = (UIViewController *)segue.destinationViewController;
+    timer->countdown = self->countdown;
+    NSLog (@"sending countdown: %@", timer->countdown);
+    timer->server = self->server;
+    
 }
 
 

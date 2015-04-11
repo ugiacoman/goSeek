@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SeekerWaitView : UIViewController
+@interface SeekerWaitView : UIViewController{
+        @public NSString *roomCode;
+        @public NSString *countdown;
+        @public goSeekConnection *server;
+}
 
 @end
 

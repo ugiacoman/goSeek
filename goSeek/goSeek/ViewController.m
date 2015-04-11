@@ -16,7 +16,6 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *startGame;
 @property (strong, nonatomic) IBOutlet UITextField *gameCodeField;
-//@property (strong, nonatomic) goSeekConnection *server;
 @end
 
 
@@ -48,6 +47,7 @@
         [sender resignFirstResponder];
 }
 - (IBAction)startGame:(id)sender {
+    NSLog (@"%@", gameCode);
     NSLog (@"Starting new game!");
 }
 
@@ -72,11 +72,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"viewDidLoad");
-    goSeekConnection *server = [[goSeekConnection alloc] init:self];
+    server = [[goSeekConnection alloc] init:self];
     [server subscribeToServerHider];
     [server requestRoomcode];
-    [server requestMarco];
-    [server requestCountDown];
+//    [server requestMarco];
+//    [server requestCountDown];
     if (server == nil){
         NSLog(@"server is nil");
     }
@@ -100,6 +100,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog (@"prepareSegue");
+    
+    SeekerWaitView *dest = (UIViewController *)segue.destinationViewController;
+    
+    dest->roomCode = self->gameCode;
+    dest->server = server;
+    
+    
 }
 
 

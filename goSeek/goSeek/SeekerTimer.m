@@ -10,6 +10,7 @@
 #import "SeekerTimer.h"
 
 @interface SeekerTimer ()
+@property (strong, nonatomic) IBOutlet UILabel *timerText;
 
 @end
 
@@ -18,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"IN SEEKER TIMER");
+    [server requestCountDown];
+    _timerText.text = countdown;
     
 }
 

@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SeekerTimer.h"
 
-@interface HiderWaitView : UIViewController
+@interface HiderWaitView : UIViewController{
+    @public goSeekConnection *server;
+}
 
 @end
 

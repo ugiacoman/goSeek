@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "network.h"
 
-@interface HiderTimer : UIViewController
+@interface HiderTimer : UIViewController{
+    @public goSeekConnection *server;
+}
 
 @end
 
