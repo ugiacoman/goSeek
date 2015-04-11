@@ -39,6 +39,7 @@ def id_generator(size=4, chars=string.ascii_uppercase):
 app = Flask(__name__)
 subscriptions = []
 seekers = []
+player_count = 0
 
 # Client code consumes like this.
 @app.route("/")
@@ -76,6 +77,8 @@ def debug():
 # generates a roomcode string and returns json
 @app.route("/roomcode")
 def roomcode():
+    global player_count
+    player_count = 0
     roomcode = id_generator()
     return json.dumps({"roomcode": roomcode})
 
@@ -97,6 +100,17 @@ def test():
             map(lambda sub: sub.put(msg), subscriptions)
             map(lambda sub: sub.put(msg), seekers)
             gevent.sleep(1)
+    gevent.spawn(notify)
+    return "OK"
+
+@app.route("/add_player")
+def add_player():
+    global player_count
+    player_count += 1
+    def notify():
+        msg = (str(player_count), "ADD_PLAYER")
+        map(lambda sub: sub.put(msg), subscriptions)
+        map(lambda sub: sub.put(msg), seekers)
     gevent.spawn(notify)
     return "OK"
 
