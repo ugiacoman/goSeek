@@ -38,6 +38,7 @@ def id_generator(size=4, chars=string.ascii_uppercase):
 
 app = Flask(__name__)
 subscriptions = []
+seekers = []
 
 # Client code consumes like this.
 @app.route("/")
@@ -91,9 +92,10 @@ def marco():
 @app.route("/countdown")
 def test():
     def notify():
-        for x in range(5,0,-1):
+        for x in xrange(5,-1,-1):
             msg = (str(x), "COUNTDOWN")
             map(lambda sub: sub.put(msg), subscriptions)
+            map(lambda sub: sub.put(msg), seekers)
             gevent.sleep(1)
     gevent.spawn(notify)
     return "OK"
@@ -106,6 +108,22 @@ def close():
         map(lambda sub: sub.put(msg), subscriptions)
     gevent.spawn(notify)
     return "OK"
+
+# event source for hiders
+@app.route("/seeker")
+def seeker():
+    def gen():
+        q = Queue()
+        seekers.append(q)
+        try:
+            while True:
+                (data, etype) = q.get()
+                ev = ServerSentEvent(str(data), str(etype))
+                yield ev.encode()
+        except GeneratorExit: # Or maybe use flask signals
+            seekers.remove(q)
+
+    return Response(gen(), mimetype="text/event-stream")
 
 # event source for hiders
 @app.route("/polo")
