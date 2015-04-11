@@ -72,11 +72,13 @@ def index():
 def debug():
     return "Currently %d subscriptions" % len(subscriptions)
 
+# generates a roomcode string and returns json
 @app.route("/roomcode")
 def roomcode():
     roomcode = id_generator()
     return json.dumps({"roomcode": roomcode})
 
+# seeker wants hiders to yell polo
 @app.route("/marco")
 def marco():
     def notify():
@@ -85,6 +87,7 @@ def marco():
     gevent.spawn(notify)
     return "OK"
 
+# seeker initiates countdown
 @app.route("/countdown")
 def test():
     def notify():
@@ -95,6 +98,7 @@ def test():
     gevent.spawn(notify)
     return "OK"
 
+# close connection to server
 @app.route("/close")
 def close():
     def notify():
@@ -103,6 +107,7 @@ def close():
     gevent.spawn(notify)
     return "OK"
 
+# event source for hiders
 @app.route("/polo")
 def polo():
     def gen():
