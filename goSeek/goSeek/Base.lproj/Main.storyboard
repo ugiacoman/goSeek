@@ -16,33 +16,121 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E7y-cP-aVR">
-                                <rect key="frame" x="17" y="376" width="286" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AuR-YQ-668">
-                                <rect key="frame" x="21" y="135" width="279" height="106"/>
-                                <color key="backgroundColor" red="0.80598099721463301" green="1" blue="0.94287125052898302" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="titleShadowOffset" width="0.0" height="1"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="START NEW GAME">
-                                            <attributes>
-                                                <color key="NSColor" red="1" green="0.55049206577024457" blue="0.48048569718401812" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="36" name=".HelveticaNeueDeskInterface-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDd-3A-oqd">
+                                <rect key="frame" x="22" y="97" width="275" height="87"/>
+                                <color key="backgroundColor" red="0.80598099720000005" green="1" blue="0.94287125049999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="26"/>
+                                <state key="normal" title="START NEW GAME">
+                                    <color key="titleColor" red="1" green="0.40623837489999998" blue="0.33083136099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="newGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ozt-oX-tFm"/>
+                                    <segue destination="d2R-Sz-Y42" kind="modal" id="DE2-f2-1Xl"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="E7y-cP-aVR">
+                                <rect key="frame" x="17" y="269" width="287" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="join"/>
+                                <connections>
+                                    <action selector="returnKeyButton:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="Lse-Hf-KLE"/>
+                                    <segue destination="LLN-4g-JH7" kind="modal" identifier="HiderWait" id="6LJ-8M-adI"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40623837485327097" blue="0.33083136100112798" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vq5-vC-Fc1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="195" y="281"/>
+            <point key="canvasLocation" x="159" y="263"/>
+        </scene>
+        <!--Seeker Wait View-->
+        <scene sceneID="ixv-I3-VhW">
+            <objects>
+                <viewController id="d2R-Sz-Y42" customClass="SeekerWaitView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bHF-pk-S8g"/>
+                        <viewControllerLayoutGuide type="bottom" id="CbT-OQ-d22"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Ns-68-pRH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Game Code is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJK-nt-X5n">
+                                <rect key="frame" x="16" y="48" width="288" height="70"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="43534" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPF-rG-Ta6">
+                                <rect key="frame" x="81" y="137" width="158" height="79"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="49"/>
+                                <color key="textColor" red="0.75337347848626912" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5MG-u0-yOy">
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                <color key="tintColor" red="0.54222765080000002" green="0.93286780000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.54222765080000002" green="0.93286780000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGP-n1-7vs">
+                                <rect key="frame" x="23" y="434" width="275" height="87"/>
+                                <color key="backgroundColor" red="0.73372452869105498" green="1" blue="0.23892772168133736" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="26"/>
+                                <state key="normal" title="PLAY NOW">
+                                    <color key="titleColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGame:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="70I-6L-rIw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waiting for other players..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aI-bo-Nln">
+                                <rect key="frame" x="64" y="310" width="193" height="91"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="0.54222765075600909" green="0.93286780000202141" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="gameCode" destination="ZPF-rG-Ta6" id="pQJ-xv-F3A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7g2-2Q-kDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="616" y="-48"/>
+        </scene>
+        <!--Hider Wait View-->
+        <scene sceneID="AE9-iS-8RY">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="LLN-4g-JH7" customClass="HiderWaitView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NcY-lm-eMS"/>
+                        <viewControllerLayoutGuide type="bottom" id="G9g-Gm-Ne8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="HiderWaitView" id="zRc-05-yTx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waiting for seeker to start game..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq3-pN-b9Q">
+                                <rect key="frame" x="40" y="350" width="240" height="106"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.73372452870000004" green="1" blue="0.23892772170000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LzY-o8-VWc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hCJ-Fq-hiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="616" y="600"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

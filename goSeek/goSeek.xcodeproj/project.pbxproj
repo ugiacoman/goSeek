@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6081C1C31AD910B40057B389 /* HiderWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6081C1C21AD910B40057B389 /* HiderWaitView.m */; };
 		60C5DFF51AD8E21B009E73A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DFF41AD8E21B009E73A2 /* main.m */; };
 		60C5DFF81AD8E21B009E73A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DFF71AD8E21B009E73A2 /* AppDelegate.m */; };
 		60C5DFFB1AD8E21B009E73A2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DFFA1AD8E21B009E73A2 /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6081C1C21AD910B40057B389 /* HiderWaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiderWaitView.m; sourceTree = "<group>"; };
+		6081C1C51AD9111F0057B389 /* HiderWaitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HiderWaitView.h; path = ../HiderWaitView.h; sourceTree = "<group>"; };
 		60C5DFEF1AD8E21B009E73A2 /* goSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C5DFF31AD8E21B009E73A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60C5DFF41AD8E21B009E73A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,8 +87,10 @@
 		60C5DFF11AD8E21B009E73A2 /* goSeek */ = {
 			isa = PBXGroup;
 			children = (
+				6081C1C51AD9111F0057B389 /* HiderWaitView.h */,
 				60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */,
 				60C5E01E1AD903FE009E73A2 /* SeekerWaitView.h */,
+				6081C1C21AD910B40057B389 /* HiderWaitView.m */,
 				60C5DFF61AD8E21B009E73A2 /* AppDelegate.h */,
 				60C5DFF71AD8E21B009E73A2 /* AppDelegate.m */,
 				60C5DFF91AD8E21B009E73A2 /* ViewController.h */,
@@ -232,6 +237,7 @@
 				60C5DFFB1AD8E21B009E73A2 /* ViewController.m in Sources */,
 				60C5DFF81AD8E21B009E73A2 /* AppDelegate.m in Sources */,
 				60C5E01D1AD902CC009E73A2 /* SeekerWaitView.m in Sources */,
+				6081C1C31AD910B40057B389 /* HiderWaitView.m in Sources */,
 				60C5DFF51AD8E21B009E73A2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

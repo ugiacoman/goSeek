@@ -7,21 +7,45 @@
 //
 
 #import "ViewController.h"
+#import "SeekerWaitView.h"
 
 @interface ViewController ()
 
 @end
 
+UIButton *newCode;
+UITextField *gameCodeField;
+
 @implementation ViewController
-- (IBAction)newGame:(id)sender {
-    NSLog (@"Starting new game!");
+
+- (IBAction)returnKeyButton:(id)sender {
+    [sender resignFirstResponder];
 }
+
+- (IBAction)newGame:(id)sender {
+     NSLog (@"Starting new game!");
+}
+
+- (IBAction)gameCodeField:(UITextField *)sender {
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)sender {
+    NSLog (@"Text field should return");
+    [self performSegueWithIdentifier:@"HiderWait" sender:self];
+    NSLog (@"After");
+    return YES;
+}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    [gameCodeField addTarget:gameCodeField
+                  action:@selector(resignFirstResponder)
+        forControlEvents:UIControlEventEditingDidEndOnExit];
     
 }
 

@@ -1,26 +1,24 @@
 //
-//  SeekerWaitView.m
+//  HiderWaitView.m
 //  goSeek
 //
 //  Created by Corynne Dech on 4/11/15.
 //  Copyright (c) 2015 goSeek. All rights reserved.
 //
 
-#import "SeekerWaitView.h"
+#import "HiderWaitView.h"
 
-@interface SeekerWaitView ()
-
-@property (weak, nonatomic) IBOutlet UILabel *gameCode;
+@interface HiderWaitView ()
 
 @end
 
-@implementation SeekerWaitView
+@implementation HiderWaitView
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _gameCode.text = @"1111";
-    NSLog (@"IN NEW VIEW");
+    
+    NSLog (@"IN HIDER VIEW");
     
 }
 

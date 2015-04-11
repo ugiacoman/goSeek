@@ -1,14 +1,13 @@
 //
-//  ViewController.h
+//  Header.h
 //  goSeek
 //
 //  Created by Corynne Dech on 4/11/15.
 //  Copyright (c) 2015 goSeek. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#ifndef goSeek_Header_h
+#define goSeek_Header_h
 
-@interface ViewController : UIViewController
 
-@end
-
+#endif
