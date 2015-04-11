@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) IBOutlet UIButton *startGame;
+@property (strong, nonatomic) IBOutlet UITextField *gameCodeField;
 
 @end
 
@@ -22,8 +24,7 @@
 }
 
 
-IBOutlet UIButton *newCode;
-@synthesize gameCodeField, gameCode;
+@synthesize gameCodeField;
 - (IBAction)updateInput:(id)sender {
     
 }
@@ -41,9 +42,8 @@ IBOutlet UIButton *newCode;
     NSLog(@"returnkey");
         [sender resignFirstResponder];
 }
-
-- (IBAction)newGame:(id)sender {
-     NSLog (@"Starting new game!");
+- (IBAction)startGame:(id)sender {
+    NSLog (@"Starting new game!");
 }
 
 
@@ -70,9 +70,9 @@ IBOutlet UIButton *newCode;
     
    // _gameCodeField.delegate = self;
     
-    [gameCodeField addTarget:gameCodeField
-                  action:@selector(resignFirstResponder)
-        forControlEvents:UIControlEventEditingDidEndOnExit];
+//    [gameCodeField addTarget:gameCodeField
+//                  action:@selector(resignFirstResponder)
+//        forControlEvents:UIControlEventEditingDidEndOnExit];
     
 }
 

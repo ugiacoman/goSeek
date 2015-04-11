@@ -10,10 +10,5 @@
 
 @interface ViewController : UIViewController //<UITextFieldDelegate>
 
-//@property (retain, nonatomic) IBOutlet UITextField *gameCodeField;
-
-@property (weak, nonatomic) IBOutlet NSString *gameCode;
-@property (weak, nonatomic) IBOutlet UITextField *gameCodeField;
-
 @end
 
