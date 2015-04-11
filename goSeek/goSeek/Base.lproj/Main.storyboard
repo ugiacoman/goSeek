@@ -59,12 +59,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Game Code is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJK-nt-X5n">
-                                <rect key="frame" x="16" y="48" width="288" height="70"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="43534" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPF-rG-Ta6">
                                 <rect key="frame" x="81" y="137" width="158" height="79"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="49"/>
@@ -94,10 +88,9 @@
                                 <color key="textColor" red="0.54222765075600909" green="0.93286780000202141" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyL-qC-tGE">
-                                <rect key="frame" x="-33" y="0.0" width="65" height="46"/>
-                                <color key="backgroundColor" red="1" green="0.03014565537" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="X" backgroundImage="cancelTriangle.png">
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyL-qC-tGE">
+                                <rect key="frame" x="0.0" y="0.0" width="74" height="95"/>
+                                <state key="normal" title="X" image="cancelTriangle.png">
                                     <color key="titleColor" red="1" green="0.030145655374867797" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.73372452870000004" green="1" blue="0.23892772170000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -105,6 +98,12 @@
                                     <segue destination="vXZ-lx-hvc" kind="modal" id="Z2m-Jz-sDJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Game Code is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJK-nt-X5n">
+                                <rect key="frame" x="16" y="59" width="288" height="70"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -150,7 +149,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cancelTriangle.png" width="600" height="243"/>
+        <image name="cancelTriangle.png" width="292" height="351"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
