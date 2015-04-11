@@ -8,18 +8,22 @@
 
 #import "ViewController.h"
 #import "SeekerWaitView.h"
+#import "EventSource.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import "network.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) IBOutlet UIButton *startGame;
 @property (strong, nonatomic) IBOutlet UITextField *gameCodeField;
-
+//@property (strong, nonatomic) goSeekConnection *server;
 @end
 
 
 
 
 @implementation ViewController
+
 - (IBAction)gameCodeField:(id)sender {
 }
 
@@ -67,6 +71,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"viewDidLoad");
+    goSeekConnection *server = [[goSeekConnection alloc] init:self];
+    [server subscribeToServerHider];
+    [server requestRoomcode];
+    [server requestMarco];
+    [server requestCountDown];
+    if (server == nil){
+        NSLog(@"server is nil");
+    }
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
     
    // _gameCodeField.delegate = self;

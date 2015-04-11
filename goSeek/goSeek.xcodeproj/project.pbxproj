@@ -18,6 +18,9 @@
 		60C5E01D1AD902CC009E73A2 /* SeekerWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */; };
 		60E7438B1AD94B2F0097E616 /* SeekerTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E7438A1AD94B2F0097E616 /* SeekerTimer.m */; };
 		60E7438F1AD94C530097E616 /* HiderTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E7438E1AD94C530097E616 /* HiderTimer.m */; };
+		725D77801AD9BEA100B5D5DC /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 725D777F1AD9BEA100B5D5DC /* EventSource.m */; };
+		725D77831AD9BFD500B5D5DC /* network.m in Sources */ = {isa = PBXBuildFile; fileRef = 725D77821AD9BFD500B5D5DC /* network.m */; };
+		725D77851AD9C12400B5D5DC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725D77841AD9C12400B5D5DC /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,12 @@
 		60E7438C1AD94B680097E616 /* SeekerTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeekerTimer.h; sourceTree = "<group>"; };
 		60E7438D1AD94C160097E616 /* HiderTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HiderTimer.h; sourceTree = "<group>"; };
 		60E7438E1AD94C530097E616 /* HiderTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiderTimer.m; sourceTree = "<group>"; };
+		725D777D1AD9BEA100B5D5DC /* EventSource-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventSource-Prefix.pch"; sourceTree = "<group>"; };
+		725D777E1AD9BEA100B5D5DC /* EventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSource.h; sourceTree = "<group>"; };
+		725D777F1AD9BEA100B5D5DC /* EventSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventSource.m; sourceTree = "<group>"; };
+		725D77811AD9BF8F00B5D5DC /* network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = network.h; sourceTree = "<group>"; };
+		725D77821AD9BFD500B5D5DC /* network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = network.m; sourceTree = "<group>"; };
+		725D77841AD9C12400B5D5DC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725D77851AD9C12400B5D5DC /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +85,7 @@
 		60C5DFE61AD8E21B009E73A2 = {
 			isa = PBXGroup;
 			children = (
+				725D77841AD9C12400B5D5DC /* AudioToolbox.framework */,
 				60C5DFF11AD8E21B009E73A2 /* goSeek */,
 				60C5E00B1AD8E21B009E73A2 /* goSeekTests */,
 				60C5DFF01AD8E21B009E73A2 /* Products */,
@@ -93,6 +104,9 @@
 		60C5DFF11AD8E21B009E73A2 /* goSeek */ = {
 			isa = PBXGroup;
 			children = (
+				725D777D1AD9BEA100B5D5DC /* EventSource-Prefix.pch */,
+				725D777E1AD9BEA100B5D5DC /* EventSource.h */,
+				725D777F1AD9BEA100B5D5DC /* EventSource.m */,
 				6081C1C51AD9111F0057B389 /* HiderWaitView.h */,
 				60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */,
 				60C5E01E1AD903FE009E73A2 /* SeekerWaitView.h */,
@@ -106,6 +120,8 @@
 				60E7438A1AD94B2F0097E616 /* SeekerTimer.m */,
 				60E7438C1AD94B680097E616 /* SeekerTimer.h */,
 				60E7438D1AD94C160097E616 /* HiderTimer.h */,
+				725D77811AD9BF8F00B5D5DC /* network.h */,
+				725D77821AD9BFD500B5D5DC /* network.m */,
 				60E7438E1AD94C530097E616 /* HiderTimer.m */,
 				60C5E0011AD8E21B009E73A2 /* LaunchScreen.xib */,
 				60C5DFF21AD8E21B009E73A2 /* Supporting Files */,
@@ -244,9 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725D77831AD9BFD500B5D5DC /* network.m in Sources */,
 				60C5DFFB1AD8E21B009E73A2 /* ViewController.m in Sources */,
 				60C5DFF81AD8E21B009E73A2 /* AppDelegate.m in Sources */,
 				60C5E01D1AD902CC009E73A2 /* SeekerWaitView.m in Sources */,
+				725D77801AD9BEA100B5D5DC /* EventSource.m in Sources */,
 				60E7438F1AD94C530097E616 /* HiderTimer.m in Sources */,
 				6081C1C31AD910B40057B389 /* HiderWaitView.m in Sources */,
 				60E7438B1AD94B2F0097E616 /* SeekerTimer.m in Sources */,

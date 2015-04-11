@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "network.h"
 
-@interface ViewController : UIViewController //<UITextFieldDelegate>
-
+@interface ViewController : UIViewController
 @end
 
