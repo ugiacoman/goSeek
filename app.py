@@ -5,6 +5,8 @@ import gevent
 from gevent.wsgi import WSGIServer
 from gevent.queue import Queue
 import json
+import string
+import random
 
 from flask import Flask, Response
 
@@ -28,6 +30,11 @@ class ServerSentEvent(object):
         if not self.data:
             return ""
         return "event: %s\ndata: %s\n\n" % (self.d_map.get("event", ""), self.d_map.get("data"))
+
+
+def id_generator(size=4, chars=string.ascii_uppercase):
+    return ''.join(random.choice(chars) for _ in range(size))
+
 
 app = Flask(__name__)
 subscriptions = []
@@ -64,6 +71,11 @@ def index():
 @app.route("/debug")
 def debug():
     return "Currently %d subscriptions" % len(subscriptions)
+
+@app.route("/roomcode")
+def roomcode():
+    roomcode = id_generator()
+    return json.dumps({"roomcode": roomcode})
 
 @app.route("/marco")
 def marco():
