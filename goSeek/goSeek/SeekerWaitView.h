@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SeekerWaitView.h
 //  goSeek
 //
 //  Created by Corynne Dech on 4/11/15.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-- (IBAction)buttonTapped:(UIButton *)newGame;
+@interface SeekerWaitView : UIViewController
 
 @end
 

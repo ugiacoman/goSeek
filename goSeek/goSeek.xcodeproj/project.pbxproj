@@ -14,6 +14,7 @@
 		60C5E0001AD8E21B009E73A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C5DFFF1AD8E21B009E73A2 /* Images.xcassets */; };
 		60C5E0031AD8E21B009E73A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60C5E0011AD8E21B009E73A2 /* LaunchScreen.xib */; };
 		60C5E00F1AD8E21B009E73A2 /* goSeekTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5E00E1AD8E21B009E73A2 /* goSeekTests.m */; };
+		60C5E01D1AD902CC009E73A2 /* SeekerWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		60C5E0081AD8E21B009E73A2 /* goSeekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = goSeekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C5E00D1AD8E21B009E73A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60C5E00E1AD8E21B009E73A2 /* goSeekTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = goSeekTests.m; sourceTree = "<group>"; };
+		60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekerWaitView.m; sourceTree = "<group>"; };
+		60C5E01E1AD903FE009E73A2 /* SeekerWaitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeekerWaitView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		60C5DFF11AD8E21B009E73A2 /* goSeek */ = {
 			isa = PBXGroup;
 			children = (
+				60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */,
+				60C5E01E1AD903FE009E73A2 /* SeekerWaitView.h */,
 				60C5DFF61AD8E21B009E73A2 /* AppDelegate.h */,
 				60C5DFF71AD8E21B009E73A2 /* AppDelegate.m */,
 				60C5DFF91AD8E21B009E73A2 /* ViewController.h */,
@@ -226,6 +231,7 @@
 			files = (
 				60C5DFFB1AD8E21B009E73A2 /* ViewController.m in Sources */,
 				60C5DFF81AD8E21B009E73A2 /* AppDelegate.m in Sources */,
+				60C5E01D1AD902CC009E73A2 /* SeekerWaitView.m in Sources */,
 				60C5DFF51AD8E21B009E73A2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +423,7 @@
 				60C5E0141AD8E21B009E73A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60C5E0151AD8E21B009E73A2 /* Build configuration list for PBXNativeTarget "goSeekTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +432,7 @@
 				60C5E0171AD8E21B009E73A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

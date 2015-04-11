@@ -1,27 +1,24 @@
 //
-//  ViewController.m
+//  SeekerWaitView.m
 //  goSeek
 //
 //  Created by Corynne Dech on 4/11/15.
 //  Copyright (c) 2015 goSeek. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SeekerWaitView.h"
 
-@interface ViewController ()
+@interface SeekerWaitView ()
 
 @end
 
-@implementation ViewController
-- (IBAction)newGame:(id)sender {
-    NSLog (@"Starting new game!");
-}
+@implementation SeekerWaitView
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    NSLog (@"IN NEW VIEW");
     
 }
 
