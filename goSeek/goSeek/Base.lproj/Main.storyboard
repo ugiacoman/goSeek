@@ -259,10 +259,10 @@
             </objects>
             <point key="canvasLocation" x="616" y="600"/>
         </scene>
-        <!--View Controller-->
+        <!--Hider Timer-->
         <scene sceneID="IWf-qa-2xF">
             <objects>
-                <viewController id="DmX-mF-9nO" sceneMemberID="viewController">
+                <viewController id="DmX-mF-9nO" customClass="HiderTimer" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GZa-Tp-ZpO"/>
                         <viewControllerLayoutGuide type="bottom" id="pb2-Np-gXt"/>
@@ -304,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="999" y="700"/>
         </scene>
-        <!--View Controller-->
+        <!--Seeker Timer-->
         <scene sceneID="pYC-PI-yLf">
             <objects>
-                <viewController id="oVU-qQ-hUG" sceneMemberID="viewController">
+                <viewController id="oVU-qQ-hUG" customClass="SeekerTimer" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZD0-7x-l2t"/>
                         <viewControllerLayoutGuide type="bottom" id="km3-bV-Ds8"/>
@@ -410,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3n-Uj-y1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1605" y="600"/>
+            <point key="canvasLocation" x="1485" y="656"/>
         </scene>
     </scenes>
     <resources>

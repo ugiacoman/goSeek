@@ -16,6 +16,8 @@
 		60C5E0031AD8E21B009E73A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60C5E0011AD8E21B009E73A2 /* LaunchScreen.xib */; };
 		60C5E00F1AD8E21B009E73A2 /* goSeekTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5E00E1AD8E21B009E73A2 /* goSeekTests.m */; };
 		60C5E01D1AD902CC009E73A2 /* SeekerWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */; };
+		60E7438B1AD94B2F0097E616 /* SeekerTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E7438A1AD94B2F0097E616 /* SeekerTimer.m */; };
+		60E7438F1AD94C530097E616 /* HiderTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E7438E1AD94C530097E616 /* HiderTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,10 @@
 		60C5E00E1AD8E21B009E73A2 /* goSeekTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = goSeekTests.m; sourceTree = "<group>"; };
 		60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekerWaitView.m; sourceTree = "<group>"; };
 		60C5E01E1AD903FE009E73A2 /* SeekerWaitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeekerWaitView.h; sourceTree = "<group>"; };
+		60E7438A1AD94B2F0097E616 /* SeekerTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekerTimer.m; sourceTree = "<group>"; };
+		60E7438C1AD94B680097E616 /* SeekerTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeekerTimer.h; sourceTree = "<group>"; };
+		60E7438D1AD94C160097E616 /* HiderTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HiderTimer.h; sourceTree = "<group>"; };
+		60E7438E1AD94C530097E616 /* HiderTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiderTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,10 @@
 				60C5DFFA1AD8E21B009E73A2 /* ViewController.m */,
 				60C5DFFC1AD8E21B009E73A2 /* Main.storyboard */,
 				60C5DFFF1AD8E21B009E73A2 /* Images.xcassets */,
+				60E7438A1AD94B2F0097E616 /* SeekerTimer.m */,
+				60E7438C1AD94B680097E616 /* SeekerTimer.h */,
+				60E7438D1AD94C160097E616 /* HiderTimer.h */,
+				60E7438E1AD94C530097E616 /* HiderTimer.m */,
 				60C5E0011AD8E21B009E73A2 /* LaunchScreen.xib */,
 				60C5DFF21AD8E21B009E73A2 /* Supporting Files */,
 			);
@@ -237,7 +247,9 @@
 				60C5DFFB1AD8E21B009E73A2 /* ViewController.m in Sources */,
 				60C5DFF81AD8E21B009E73A2 /* AppDelegate.m in Sources */,
 				60C5E01D1AD902CC009E73A2 /* SeekerWaitView.m in Sources */,
+				60E7438F1AD94C530097E616 /* HiderTimer.m in Sources */,
 				6081C1C31AD910B40057B389 /* HiderWaitView.m in Sources */,
+				60E7438B1AD94B2F0097E616 /* SeekerTimer.m in Sources */,
 				60C5DFF51AD8E21B009E73A2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

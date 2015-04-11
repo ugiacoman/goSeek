@@ -10,11 +10,12 @@
 #import "SeekerWaitView.h"
 
 @interface ViewController ()
-
+@property(nonatomic, copy) NSString *gameCode;
 @end
 
 UIButton *newCode;
 UITextField *gameCodeField;
+
 
 @implementation ViewController
 
@@ -31,6 +32,7 @@ UITextField *gameCodeField;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)sender {
+    _gameCode = gameCodeField.text;
     NSLog (@"Text field should return");
     [self performSegueWithIdentifier:@"HiderWait" sender:self];
     NSLog (@"After");
@@ -43,10 +45,6 @@ UITextField *gameCodeField;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
-    CGRect frameRect = gameCodeField.frame;
-    frameRect.size.height = 100;
-    gameCodeField.frame = frameRect;
     
     
     [gameCodeField addTarget:gameCodeField
