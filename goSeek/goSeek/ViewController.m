@@ -10,33 +10,56 @@
 #import "SeekerWaitView.h"
 
 @interface ViewController ()
-@property(nonatomic, copy) NSString *gameCode;
+
+
 @end
 
-UIButton *newCode;
-UITextField *gameCodeField;
+
 
 
 @implementation ViewController
+- (IBAction)gameCodeField:(id)sender {
+}
+
+
+IBOutlet UIButton *newCode;
+@synthesize gameCodeField, gameCode;
+- (IBAction)updateInput:(id)sender {
+    
+}
+- (IBAction)textChanged:(id)sender {
+    
+    
+}
 
 - (IBAction)returnKeyButton:(id)sender {
-    [sender resignFirstResponder];
+    gameCodeField.text = @"HELLOOO";
+    NSLog (@"%@", gameCodeField.text);
+    if(gameCodeField == nil){
+        NSLog(@"FIELD NULL");
+    }
+    NSLog(@"returnkey");
+        [sender resignFirstResponder];
 }
 
 - (IBAction)newGame:(id)sender {
      NSLog (@"Starting new game!");
 }
 
-- (IBAction)gameCodeField:(UITextField *)sender {
-    
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)sender {
-    _gameCode = gameCodeField.text;
-    NSLog (_gameCode);
+    //gameCode= sender.text;
+    //NSLog (@"%@", sender.text);
+    NSLog (@"Before");
     [self performSegueWithIdentifier:@"HiderWait" sender:self];
     NSLog (@"After");
     return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"touchesBegan:withEvent:");
+    [self.view endEditing:YES];
+    [super touchesBegan:touches withEvent:event];
 }
 
 
@@ -45,7 +68,7 @@ UITextField *gameCodeField;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+   // _gameCodeField.delegate = self;
     
     [gameCodeField addTarget:gameCodeField
                   action:@selector(resignFirstResponder)
@@ -56,6 +79,15 @@ UITextField *gameCodeField;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString *code = gameCodeField.text;
+    int cod = [[gameCodeField text] intValue];
+//    gameCode = (UITextField *)sender.text;
+    NSLog (@"%@", gameCodeField.text);
+    NSLog (@"prepareSegue");
 }
 
 
