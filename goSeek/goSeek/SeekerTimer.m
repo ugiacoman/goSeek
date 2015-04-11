@@ -1,5 +1,5 @@
 //
-//  HiderTimer.m
+//  SeekerTimer.m
 //  goSeek
 //
 //  Created by Corynne Dech on 4/11/15.
@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HiderTimer.h"
+#import "SeekerTimer.h"
 
-@interface HiderTimer ()
+@interface SeekerTimer ()
 
 @end
 
-@implementation HiderTimer
+@implementation SeekerTimer
 
 - (void)viewDidLoad {
     [super viewDidLoad];

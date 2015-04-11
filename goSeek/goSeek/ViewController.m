@@ -33,7 +33,7 @@ UITextField *gameCodeField;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)sender {
     _gameCode = gameCodeField.text;
-    NSLog (@"Text field should return");
+    NSLog (_gameCode);
     [self performSegueWithIdentifier:@"HiderWait" sender:self];
     NSLog (@"After");
     return YES;

@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *gameCode;
 
 @end
+UIButton *playButton;
 
 @implementation SeekerWaitView
 - (IBAction)playButton:(id)sender {
