@@ -76,8 +76,8 @@ def publish():
     
     return "OK"
 
-@app.route("/subscribe")
-def subscribe():
+@app.route("/polo")
+def polo():
     def gen():
         q = Queue()
         subscriptions.append(q)
