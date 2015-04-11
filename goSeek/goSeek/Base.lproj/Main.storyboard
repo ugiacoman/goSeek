@@ -21,7 +21,7 @@
                                 <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="join"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="join"/>
                                 <connections>
                                     <action selector="gameCodeField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="Dsu-8R-boH"/>
                                     <action selector="returnKeyButton:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="Lse-Hf-KLE"/>
@@ -421,6 +421,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SlY-Ei-32Y"/>
+        <segue reference="LJc-Qe-XlN"/>
     </inferredMetricsTieBreakers>
 </document>

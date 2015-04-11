@@ -34,8 +34,9 @@
 }
 
 - (IBAction)returnKeyButton:(id)sender {
-    gameCodeField.text = @"HELLOOO";
-    NSLog (@"%@", gameCodeField.text);
+    NSString *inputCode;
+    inputCode = gameCodeField.text;
+    NSLog (@"%@", inputCode);
     if(gameCodeField == nil){
         NSLog(@"FIELD NULL");
     }
@@ -83,10 +84,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSString *code = gameCodeField.text;
-    int cod = [[gameCodeField text] intValue];
-//    gameCode = (UITextField *)sender.text;
-    NSLog (@"%@", gameCodeField.text);
     NSLog (@"prepareSegue");
 }
 
