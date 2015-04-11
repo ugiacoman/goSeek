@@ -90,7 +90,7 @@
                             </label>
                             <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyL-qC-tGE">
                                 <rect key="frame" x="0.0" y="0.0" width="74" height="95"/>
-                                <state key="normal" title="X" image="cancelTriangle.png">
+                                <state key="normal" title="X">
                                     <color key="titleColor" red="1" green="0.030145655374867797" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.73372452870000004" green="1" blue="0.23892772170000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -148,9 +148,6 @@
             <point key="canvasLocation" x="616" y="600"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cancelTriangle.png" width="292" height="351"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
