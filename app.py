@@ -65,46 +65,31 @@ def index():
 def debug():
     return "Currently %d subscriptions" % len(subscriptions)
 
-@app.route("/publish")
-def publish():
-    #Dummy data - pick up from request for real data
+@app.route("/marco")
+def marco():
     def notify():
-        msg = (str(time.time()), "publish")
-        for sub in subscriptions[:]:
-            sub.put(msg)
-    
+        msg = ("marco", "MARCO")
+        map(lambda sub: sub.put(msg), subscriptions)
     gevent.spawn(notify)
-    
     return "OK"
 
 @app.route("/countdown")
 def test():
     def notify():
         for x in range(5,0,-1):
-            msg = (str(x), "countdown")
+            msg = (str(x), "COUNTDOWN")
             map(lambda sub: sub.put(msg), subscriptions)
             gevent.sleep(1)
     gevent.spawn(notify)
     return "OK"
 
-# @app.route("/test_polo")
-# def test_polo():
-#     def gen():
-#         q = Queue()
-#         subscriptions.append(q)
-#         try:
-#             while True:
-#                 # (result, etype) = q.get()
-#                 result = q.get()
-#                 # ev = ServerSentEvent(str(result), str(etype))
-#                 ev = ServerSentEvent(str(result))
-#                 # yield ev.encode()
-#                 yield ev.encode()
-#                 # yield "event: hello\ndata: this is a test\n\n"
-#         except GeneratorExit: # Or maybe use flask signals
-#             subscriptions.remove(q)
-
-#     return Response(gen(), mimetype="text/event-stream")
+@app.route("/close")
+def close():
+    def notify():
+        msg = ("close", "CLOSE")
+        map(lambda sub: sub.put(msg), subscriptions)
+    gevent.spawn(notify)
+    return "OK"
 
 @app.route("/polo")
 def polo():
