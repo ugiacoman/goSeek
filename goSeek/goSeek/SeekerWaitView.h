@@ -13,11 +13,12 @@
 @class SeekerTimer;
 
 @interface SeekerWaitView : UIViewController{
-        @public NSString *roomCode;
         @public NSString *countdown;
         @public goSeekConnection *server;
         @public SeekerTimer *seekerTimer;
 }
+
+- (void) updateRoomCode: (NSString *)roomCode;
 
 @end
 

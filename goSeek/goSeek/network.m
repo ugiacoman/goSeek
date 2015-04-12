@@ -11,6 +11,11 @@
 #import "EventSource.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "SeekerTimer.h"
+#import "SeekingView.h"
+#import "SeekerWaitView.h"
+#import "HiderTimer.h"
+#import "HiderWaitView.h"
+#import "HidingView.h"
 #import "ViewController.h"
 
 @interface goSeekConnection ()
@@ -27,31 +32,20 @@
 
 - (void)subscribeToServerHider {
     
-    NSLog(@"Hello World!");
-    
     NSURL *serverURL = [NSURL URLWithString:@"http://45.55.188.238:5000/polo"];
     
     EventSource *sourceCountDown = [EventSource eventSourceWithURL:serverURL];
     [sourceCountDown addEventListener:@"COUNTDOWN" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
         
-        //Corynne tells _mainView to do something with Countdown data
-        //Corynne tells _mainView to do something with _roomcode
-        SeekerTimer *seekerTimer = [_mainView getSeekerTimer];
-        [seekerTimer updateCountdown :e.data];
-        
-        //e.data will be strings that represent the number of seconds
-        //remaining
-        
+        HiderTimer *hiderTimer = [_mainView getHiderTimer];
+        [hiderTimer updateCountdown :e.data];
     }];
     
     EventSource *sourceMarco = [EventSource eventSourceWithURL:serverURL];
     [sourceMarco addEventListener:@"MARCO" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
         AudioServicesPlaySystemSound (1005);
-        
-        //Corynne tells _mainView to do something with marco data
-        //e.data is actually empty, you just need to tell _mainView to make a chirp
         
     }];
 
@@ -62,6 +56,10 @@
         //Corynne tells _mainView end personal game
     }];
     
+    [self requestAddPlayer];
+    
+    
+    
 }
 
 - (void)subscribeToServerSeeker{
@@ -70,8 +68,36 @@
     EventSource *sourceCountdown = [EventSource eventSourceWithURL:serverURL];
     [sourceCountdown addEventListener:@"COUNTDOWN" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
+        
+        SeekerTimer *seekerTimer = [_mainView getSeekerTimer];
+        [seekerTimer updateCountdown :e.data];
+        
     }];
     
+    EventSource *sourceClose = [EventSource eventSourceWithURL:serverURL];
+    [sourceClose addEventListener:@"CLOSE" handler:^(Event *e) {
+        NSLog(@"%@: %@", e.event, e.data);
+        
+        //Corynne tells _mainView end personal game
+    }];
+    
+    EventSource *sourcePlayersLeft = [EventSource eventSourceWithURL:serverURL];
+    [sourceClose addEventListener:@"ADD_PLAYER" handler:^(Event *e) {
+        NSLog(@"%@: %@", e.event, e.data);
+        
+        SeekingView *seekingView = [_mainView getSeekingView];
+        [seekingView updatePlayersLeft :e.data];
+    }];
+    
+}
+
+- (void)requestAddPlayer{
+    // Requests server to send out new roomcode
+    // picked up by subscribers, not this method
+    NSURLRequest *requestAddPlayer = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://45.55.188.238:5000/add_player"]];
+    
+    
+    NSURLConnection *connAddPlayer = [[NSURLConnection alloc] initWithRequest:requestAddPlayer delegate:self];
 }
 
 
@@ -129,10 +155,15 @@
         NSLog(_roomcode);
     }
 
+    @try{
+        SeekerWaitView *seekerWaitView = [_mainView getSeekerWaitView];
+        [seekerWaitView updateRoomCode :_roomcode];
+    }
+    @catch (NSException * e) {
+        NSLog(@"Exception: %@", e);
+    }
     
-    //Corynne tells _mainView to do something with _roomcode
-    ViewController *view = (ViewController *)_mainView;
-    view->gameCode = _roomcode;
+    
     
     NSLog(@"\nDid recieve data\n");
     

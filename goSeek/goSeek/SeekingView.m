@@ -11,7 +11,8 @@
 #import "network.h"
 
 @interface SeekingView ()
-@property (strong, nonatomic) IBOutlet UILabel *playersLeft;
+@property (strong, nonatomic) IBOutlet UILabel *playersLeftLabel;
+@property (strong, nonatomic) IBOutlet UIButton *marcoButton;
 
 @end
 
@@ -23,6 +24,9 @@
    // [server requestCountDown];
     
 }
+- (IBAction)marcoButton:(id)sender {
+    [server requestMarco];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -30,7 +34,7 @@
 }
 
 - (void) updatePlayersLeft:(NSString *)playersLeft{
-    _playersLeft.text = playersLeft;
+    _playersLeftLabel.text = playersLeft;
     if ([playersLeft isEqual: @"0"]){
         NSLog(@"countdown finished");
        // [self performSegueWithIdentifier:@"startSeeking" sender:self];

@@ -31,6 +31,7 @@
 }
 
 - (void) updateCountdown: (NSString *)countdown{
+    NSLog(@"updating countdown: %@", countdown);
     _timerText.text = countdown;
     if ([countdown isEqual: @"0"]){
         NSLog(@"countdown finished");
@@ -40,11 +41,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-//    seekerTimer = (UIViewController *)segue.destinationViewController;
-//    // NSLog (@"sending countdown: %@", seekerTimer->countdown);
-//    seekerTimer->server = self->server;
     seekingView = (UIViewController *)segue.destinationViewController;
-    // NSLog (@"sending countdown: %@", seekerTimer->countdown);
     seekingView->server = self->server;
     
 }

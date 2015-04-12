@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "HiderTimer.h"
+#import "HidingView.h"
 #import "network.h"
 
 @interface HiderTimer ()
+@property (strong, nonatomic) IBOutlet UILabel *timerText;
 
 @end
 
@@ -18,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"IN HIDER TIMER");
+    [server requestCountDown];
     
 }
 
@@ -26,6 +30,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) updateCountdown: (NSString *)countdown{
+    _timerText.text = countdown;
+    if ([countdown isEqual: @"0"]){
+        NSLog(@"countdown finished");
+        [self performSegueWithIdentifier:@"startHiding" sender:self];
+    }
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    hidingView = (UIViewController *)segue.destinationViewController;
+    hidingView->server = self->server;
+    
+}
 
 @end

@@ -12,6 +12,7 @@
 @class UIViewController;
 @class ViewController;
 @class SeekerTimer;
+@class SeekingView;
 
 @interface goSeekConnection : NSObject<NSURLConnectionDelegate>
 {

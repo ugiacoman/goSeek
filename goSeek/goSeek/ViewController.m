@@ -10,6 +10,9 @@
 #import "EventSource.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "network.h"
+#import "SeekerWaitView.h"
+#import "HiderWaitView.h"
+
 
 @interface ViewController (){
     @public goSeekConnection *server;
@@ -22,7 +25,7 @@
 
 @end
 
-
+int gameCount = 0;
 
 
 @implementation ViewController
@@ -40,12 +43,28 @@
     
 }
 
+- (SeekerWaitView*)getSeekerWaitView{
+    return seekerWaitView;
+}
+
+- (HiderWaitView*)getHiderWaitView{
+    return hiderWaitView;
+}
+
 - (SeekerTimer*)getSeekerTimer{
     return seekerWaitView->seekerTimer;
 }
 
-- (SeekerTimer*)getHiderTimer{
+- (HiderTimer*)getHiderTimer{
     return hiderWaitView->hiderTimer;
+}
+
+- (SeekingView*)getSeekingView{
+    return seekerWaitView->seekerTimer->seekingView;
+}
+
+- (HidingView*)getHidingView{
+    return hiderWaitView->hiderTimer->hidingView;
 }
 
 
@@ -57,11 +76,20 @@
         NSLog(@"FIELD NULL");
     }
     NSLog(@"returnkey");
-        [sender resignFirstResponder];
+    if(gameCount == 0){
+        [server subscribeToServerHider];
+    }
+    [sender resignFirstResponder];
+    NSLog (@"Leaving main view as hider");
+    gameCount++;
 }
 - (IBAction)startGame:(id)sender {
-    NSLog (@"%@", gameCode);
+    if(gameCount == 0){
+        [server subscribeToServerSeeker];
+    }
+    [server requestRoomcode];
     NSLog (@"Starting new game!");
+    gameCount++;
 }
 
 
@@ -83,11 +111,21 @@
 
 
 - (void)viewDidLoad {
+    UIImageView *animatedSplashScreen  = [[UIImageView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    [self.view addSubview:animatedSplashScreen];
+    animatedSplashScreen.animationImages= [NSArray arrayWithObjects:[UIImage imageNamed:@"1.png"],[UIImage imageNamed:@"2.png"],[UIImage imageNamed:@"3.png"],[UIImage imageNamed:@"4.png"], nil];
+    animatedSplashScreen.animationRepeatCount=5;
+    animatedSplashScreen.animationDuration=.5;
+    [animatedSplashScreen startAnimating];
+    [self performSelector:@selector(hideSplash:) withObject:animatedSplashScreen afterDelay:5.0];
+    
     [super viewDidLoad];
     NSLog(@"viewDidLoad");
-    server = [[goSeekConnection alloc] init:self];
-    [server subscribeToServerHider];
-    [server requestRoomcode];
+    if (server == nil){
+        server = [[goSeekConnection alloc] init:self];
+    }
+    
+    
 //    [server requestMarco];
 //    [server requestCountDown];
     if (server == nil){
@@ -103,6 +141,13 @@
 //                  action:@selector(resignFirstResponder)
 //        forControlEvents:UIControlEventEditingDidEndOnExit];
     
+    
+}
+
+-(void)hideSplash:(id)object
+{
+    UIImageView *animatedImageview = (UIImageView *)object;
+    [animatedImageview removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,11 +157,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog (@"prepareSegue");
+    NSLog (@"mainviewprepareSegue");
+    
     
     seekerWaitView = (UIViewController *)segue.destinationViewController;
-    
-    seekerWaitView->roomCode = self->gameCode;
     seekerWaitView->server = server;
     
     

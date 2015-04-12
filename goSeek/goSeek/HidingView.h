@@ -1,5 +1,5 @@
 //
-//  HiderTimer.h
+//  HidingView.h
 //  goSeek
 //
 //  Created by Corynne Dech on 4/11/15.
@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HiderWaitView.h"
 
+@class HiderTimer;
 @class goSeekConnection;
-@class HiderWaitView;
-@class HidingView;
 
-@interface HiderTimer : UIViewController{
+@interface HidingView : UIViewController{
 @public goSeekConnection *server;
-@public HidingView *hidingView;
 }
 
-- (void) updateCountdown: (NSString *)countdown;
+- (void) updatePlayersLeft: (NSString *)playersLeft;
 
 @end
+

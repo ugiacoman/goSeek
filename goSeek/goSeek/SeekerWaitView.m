@@ -12,18 +12,25 @@
 
 @interface SeekerWaitView ()
 
-@property (weak, nonatomic) IBOutlet UILabel *gameCode;
+@property (strong, nonatomic) IBOutlet UILabel *roomCodeLabel;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
 
 @end
 UIButton *playButton;
+BOOL goingBack;
 @implementation SeekerWaitView
 - (IBAction)playButton:(id)sender {
+}
+- (IBAction)backButtonPressed:(id)sender {
+    goingBack = true;
+    [self performSegueWithIdentifier:@"SeekerWaitBack" sender:self];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    goingBack = false;
     // Do any additional setup after loading the view, typically from a nib.
-    _gameCode.text = roomCode;
+   // _roomCodeLabel.text = roomCode;
     NSLog (@"IN NEW VIEW");
     
 }
@@ -35,11 +42,18 @@ UIButton *playButton;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    seekerTimer = (UIViewController *)segue.destinationViewController;
-   // NSLog (@"sending countdown: %@", seekerTimer->countdown);
-    seekerTimer->server = self->server;
-    
+    if(goingBack == false){
+        seekerTimer = (UIViewController *)segue.destinationViewController;
+        seekerTimer->server = server;
+    }
 }
+
+- (void) updateRoomCode: (NSString *)roomCodeUpdate{
+    NSLog (@"Updating room code %@", roomCodeUpdate);
+   _roomCodeLabel.text = roomCodeUpdate;
+}
+
+
 
 
 
