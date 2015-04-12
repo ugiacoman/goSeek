@@ -246,8 +246,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="marcoButton:" destination="twi-2V-H7y" eventType="touchUpInside" id="AMo-Hy-Ke1"/>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="xMF-3W-L2p"/>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" id="DAq-Xs-59x"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -256,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JnI-ht-CE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771" y="230"/>
+            <point key="canvasLocation" x="1823" y="164"/>
         </scene>
         <!--Hider Wait View-->
         <scene sceneID="AE9-iS-8RY">
@@ -510,7 +509,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="iui-S9-Xq2"/>
-        <segue reference="mA8-Mg-Oor"/>
+        <segue reference="Yyi-il-vjg"/>
+        <segue reference="wg9-RN-out"/>
     </inferredMetricsTieBreakers>
 </document>

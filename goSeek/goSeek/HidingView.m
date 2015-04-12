@@ -34,7 +34,7 @@ bool goingBack;
 }
 - (IBAction)imOutButtonPushed:(id)sender {
     [server requestPlayerRemoved];
-    [self performSegueWithIdentifier:@"HidingBack" sender:self];
+    [self performSegueWithIdentifier:@"hiderOver" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
