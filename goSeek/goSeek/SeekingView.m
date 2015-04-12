@@ -26,13 +26,12 @@ double prevTime = 0;
     NSLog(@"IN SEEKER TIMER");
     goingBack = false;
     
-    currentTime = CACurrentMediaTime();
-    if (currentTime - prevTime > 5){
-        _marcoButton.hidden = NO;
-        [_marcoButton setEnabled:NO];
-        _marcoButton.alpha = 0.25;
-        prevTime = currentTime;
-    }
+//    currentTime = CACurrentMediaTime();
+//    if (currentTime - prevTime > 5){
+//        [_marcoButton setEnabled:YES];
+//        _marcoButton.alpha = 1;
+//        prevTime = currentTime;
+//    }
     
     
     
@@ -40,8 +39,8 @@ double prevTime = 0;
 }
 - (IBAction)marcoButton:(id)sender {
     [server requestMarco];
-    [_marcoButton setEnabled:YES];
-    _marcoButton.alpha = 1;
+//    [_marcoButton setEnabled:NO];
+//    _marcoButton.alpha = 0.25;
 }
 - (IBAction)backButtonPushed:(id)sender {
     goingBack = true;
