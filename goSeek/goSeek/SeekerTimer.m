@@ -12,17 +12,24 @@
 #import "network.h"
 
 @interface SeekerTimer ()
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UILabel *timerText;
 
 @end
 
 @implementation SeekerTimer
+bool goingBack;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    goingBack = false;
     NSLog(@"IN SEEKER TIMER");
     [server requestCountDown];
     
+}
+- (IBAction)backButtonPushed:(id)sender {
+    goingBack = true;
+    [self performSegueWithIdentifier:@"SeekerTimerBack" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,8 +48,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if(goingBack == false){
     seekingView = (UIViewController *)segue.destinationViewController;
     seekingView->server = self->server;
+    }
     
 }
 

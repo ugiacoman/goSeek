@@ -193,7 +193,7 @@
                                     <color key="titleShadowColor" red="0.73372452870000004" green="1" blue="0.23892772170000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="mA8-Mg-Oor"/>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" identifier="SeekingBack" id="mA8-Mg-Oor"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -245,7 +245,7 @@
                                 </state>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="LLN-4g-JH7" eventType="touchUpInside" id="ycU-ZA-jco"/>
-                                    <segue destination="vXZ-lx-hvc" kind="modal" id="L2O-1L-PZO"/>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" identifier="hiderViewBack" id="L2O-1L-PZO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIC-QZ-9x1">
@@ -337,6 +337,15 @@
                                         <color key="textColor" red="1" green="0.40623837489999998" blue="0.33083136099999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WAIT!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OS-6n-mi7">
+                                        <rect key="frame" x="24" y="52" width="273" height="107"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="53"/>
+                                        <color key="textColor" red="0.6577594188" green="1" blue="0.96514499539999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="NZR-vu-hQg">
+                                        <rect key="frame" x="65" y="225" width="210" height="223"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="center" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7s-q2-cG1">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="74"/>
                                         <constraints>
@@ -347,18 +356,10 @@
                                             <color key="titleShadowColor" red="0.73372452870000004" green="1" blue="0.23892772170000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="vXZ-lx-hvc" kind="modal" id="xJz-zt-4ee"/>
+                                            <action selector="backButtonPushed:" destination="oVU-qQ-hUG" eventType="touchUpInside" id="UKs-DT-J0F"/>
+                                            <segue destination="vXZ-lx-hvc" kind="modal" identifier="SeekerTimerBack" id="DA8-2A-SmW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WAIT!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OS-6n-mi7">
-                                        <rect key="frame" x="24" y="52" width="273" height="107"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="53"/>
-                                        <color key="textColor" red="0.6577594188" green="1" blue="0.96514499539999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="NZR-vu-hQg">
-                                        <rect key="frame" x="65" y="225" width="210" height="223"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.36146135810000002" green="0.41074075290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -366,13 +367,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="P7s-q2-cG1" id="B0N-Ls-Dh0"/>
                         <outlet property="timerText" destination="cAv-Co-PdJ" id="0E4-Km-r89"/>
                         <segue destination="twi-2V-H7y" kind="modal" identifier="startSeeking" id="Nbr-Sx-3Sb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlf-5A-ljk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="-96"/>
+            <point key="canvasLocation" x="1189" y="-240"/>
         </scene>
         <!--Hiding View-->
         <scene sceneID="Sg8-Pu-Wkf">
