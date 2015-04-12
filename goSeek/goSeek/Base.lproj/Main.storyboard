@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
@@ -61,7 +62,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.40623837485327097" blue="0.33083136100112798" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.40784313725490196" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="vq5-vC-Fc1"/>
                     <connections>
@@ -149,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7g2-2Q-kDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="-33"/>
+            <point key="canvasLocation" x="522" y="623"/>
         </scene>
         <!--Seeking View-->
         <scene sceneID="VfN-Zz-doD">
@@ -197,7 +198,7 @@
                                 <color key="backgroundColor" red="0.15758763840000001" green="0.34150306429999999" blue="0.56579466540000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="26"/>
                                 <state key="normal" title="MARCO">
-                                    <color key="titleColor" red="0.93947998389999998" green="1" blue="0.63293097060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.76981329629999995" green="1" blue="0.53766333089999996" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -205,7 +206,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.93947998389999998" green="1" blue="0.63293097060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.76981329625207373" green="1" blue="0.53766333089777696" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="3m8-Qo-0bu" id="j1C-Ma-MlJ"/>
@@ -216,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Gk-Ux-ArQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553" y="-113"/>
+            <point key="canvasLocation" x="1361" y="623"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="aqb-Vj-2e6">
@@ -255,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JnI-ht-CE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2203" y="230"/>
+            <point key="canvasLocation" x="1771" y="230"/>
         </scene>
         <!--Hider Wait View-->
         <scene sceneID="AE9-iS-8RY">
@@ -270,13 +271,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waiting for seeker to start game..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq3-pN-b9Q">
-                                <rect key="frame" x="45" y="330" width="240" height="106"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="players have joined " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSP-hQ-2RG">
-                                <rect key="frame" x="76" y="144" width="169" height="106"/>
+                                <rect key="frame" x="39" y="371" width="240" height="106"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -286,35 +281,43 @@
                                 <color key="tintColor" red="0.54222765080000002" green="0.93286780000000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="color" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLf-9Q-qYf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIC-QZ-9x1">
+                                <rect key="frame" x="75" y="61" width="169" height="106"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="54"/>
+                                <color key="textColor" red="0.0" green="0.54386315951852904" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="players have joined " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSP-hQ-2RG">
+                                <rect key="frame" x="76" y="123" width="169" height="106"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pU6-uq-RbJ">
                                 <rect key="frame" x="0.0" y="0.0" width="85" height="74"/>
                                 <state key="normal" image="test">
                                     <color key="titleColor" red="1" green="0.03014565537" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.73372452870000004" green="1" blue="0.23892772170000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonPressed:" destination="LLN-4g-JH7" eventType="touchUpInside" id="ycU-ZA-jco"/>
+                                    <action selector="backButtonPressed:" destination="LLN-4g-JH7" eventType="touchUpInside" id="Ej3-3H-FgY"/>
+                                    <action selector="backButtonPressed:" destination="d2R-Sz-Y42" eventType="touchUpInside" id="gcK-No-BCP"/>
+                                    <segue destination="vXZ-lx-hvc" kind="modal" identifier="HiderWaitBack" id="617-Tc-a0w"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIC-QZ-9x1">
-                                <rect key="frame" x="75" y="77" width="169" height="106"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="54"/>
-                                <color key="textColor" red="0.0" green="0.54386315951852904" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.74608049580740965" green="1" blue="0.60209391215747288" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="LzY-o8-VWc"/>
                     <connections>
-                        <outlet property="backButton" destination="GLf-9Q-qYf" id="OGL-vJ-DPT"/>
+                        <outlet property="backButton" destination="pU6-uq-RbJ" id="hFB-fW-sLp"/>
                         <outlet property="playersLeftLabel" destination="BIC-QZ-9x1" id="LjN-9t-JCN"/>
                         <segue destination="DmX-mF-9nO" kind="modal" identifier="startHiderTimer" id="UB2-Vx-W34"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCJ-Fq-hiC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="600"/>
+            <point key="canvasLocation" x="512" y="-124"/>
         </scene>
         <!--Hider Timer-->
         <scene sceneID="IWf-qa-2xF">
@@ -352,7 +355,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="NM1-br-q0S">
-                                <rect key="frame" x="65" y="206" width="210" height="223"/>
+                                <rect key="frame" x="65" y="207" width="210" height="223"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.36146135814692937" green="0.41074075290214851" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -365,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19X-WU-TGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="700"/>
+            <point key="canvasLocation" x="927" y="-124"/>
         </scene>
         <!--Seeker Timer-->
         <scene sceneID="pYC-PI-yLf">
@@ -397,7 +400,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="NZR-vu-hQg">
                                         <rect key="frame" x="65" y="234" width="210" height="223"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7s-q2-cG1">
+                                    <button opaque="NO" contentMode="center" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7s-q2-cG1">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="85" id="XYI-hK-H2O"/>
@@ -425,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlf-5A-ljk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189" y="-240"/>
+            <point key="canvasLocation" x="927" y="623"/>
         </scene>
         <!--Hiding View-->
         <scene sceneID="Sg8-Pu-Wkf">
@@ -472,7 +475,7 @@
                                     <segue destination="vXZ-lx-hvc" kind="modal" identifier="hidingBack" id="wg9-RN-out"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuN-GC-9xy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuN-GC-9xy">
                                 <rect key="frame" x="69" y="224" width="169" height="106"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="54"/>
                                 <color key="textColor" red="1" green="0.40623837489999998" blue="0.33083136099999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -483,12 +486,12 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="lur-ip-W80" id="p1R-qg-OeT"/>
-                        <segue destination="pnA-0y-uvG" kind="modal" identifier="seekerOver" modalTransitionStyle="flipHorizontal" id="Yyi-il-vjg"/>
+                        <segue destination="pnA-0y-uvG" kind="modal" identifier="hiderOver" modalTransitionStyle="flipHorizontal" id="Yyi-il-vjg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3n-Uj-y1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1528" y="600"/>
+            <point key="canvasLocation" x="1336" y="-113"/>
         </scene>
     </scenes>
     <resources>
@@ -501,7 +504,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="tUk-rc-N7N"/>
+        <segue reference="mA8-Mg-Oor"/>
         <segue reference="iui-S9-Xq2"/>
     </inferredMetricsTieBreakers>
 </document>

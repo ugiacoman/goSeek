@@ -38,8 +38,8 @@ bool goingBack;
 - (void) updatePlayersLeft:(NSString *)playersLeft{
     _playersLeftLabel.text = playersLeft;
     if ([playersLeft isEqual: @"0"]){
-        NSLog(@"countdown finished");
-        // [self performSegueWithIdentifier:@"startSeeking" sender:self];
+        NSLog(@"hider GAME OVER");
+        [self performSegueWithIdentifier:@"hiderOver" sender:self];
     }
 }
 

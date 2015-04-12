@@ -19,15 +19,29 @@
 
 @implementation SeekingView
 bool goingBack;
+double currentTime;
+double prevTime = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"IN SEEKER TIMER");
     goingBack = false;
-   // [server requestCountDown];
+    
+    currentTime = CACurrentMediaTime();
+    if (currentTime - prevTime > 5){
+        _marcoButton.hidden = NO;
+        [_marcoButton setEnabled:NO];
+        _marcoButton.alpha = 0.25;
+        prevTime = currentTime;
+    }
+    
+    
+    
     
 }
 - (IBAction)marcoButton:(id)sender {
     [server requestMarco];
+    [_marcoButton setEnabled:YES];
+    _marcoButton.alpha = 1;
 }
 - (IBAction)backButtonPushed:(id)sender {
     goingBack = true;
@@ -42,8 +56,8 @@ bool goingBack;
 - (void) updatePlayersLeft:(NSString *)playersLeft{
     _playersLeftLabel.text = playersLeft;
     if ([playersLeft isEqual: @"0"]){
-        NSLog(@"countdown finished");
-       // [self performSegueWithIdentifier:@"startSeeking" sender:self];
+        NSLog(@"seeker GAME OVER");
+       [self performSegueWithIdentifier:@"seekerOver" sender:self];
     }
 }
 

@@ -37,9 +37,14 @@
     EventSource *sourceCountDown = [EventSource eventSourceWithURL:serverURL];
     [sourceCountDown addEventListener:@"COUNTDOWN" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
-        
-        HiderTimer *hiderTimer = [_mainView getHiderTimer];
-        [hiderTimer updateCountdown :e.data];
+        @try{
+            HiderTimer *hiderTimer = [_mainView getHiderTimer];
+            [hiderTimer updateCountdown :e.data];
+        }
+        @catch(NSException* e){
+            HiderWaitView *hiderWaitView = [_mainView getHiderWaitView];
+            [hiderWaitView performSegueWithIdentifier:@"startHiderTimer" sender:hiderWaitView];
+        }
     }];
     
     EventSource *sourceMarco = [EventSource eventSourceWithURL:serverURL];
