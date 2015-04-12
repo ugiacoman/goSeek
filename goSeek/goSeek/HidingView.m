@@ -23,6 +23,7 @@ bool goingBack;
     [super viewDidLoad];
     NSLog(@"IN HIDING VIEW");
     goingBack = false;
+    _playersLeftLabel.text = server->_numPlayers;
     // [server requestCountDown];
     
 }

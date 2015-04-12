@@ -25,6 +25,8 @@ double prevTime = 0;
     [super viewDidLoad];
     NSLog(@"IN SEEKER TIMER");
     goingBack = false;
+    _playersLeftLabel.text = server->_numPlayers;
+    
     
 //    currentTime = CACurrentMediaTime();
 //    if (currentTime - prevTime > 5){

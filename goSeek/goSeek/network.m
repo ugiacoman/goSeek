@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "network.h"
 #import "EventSource.h"
+#import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "SeekerTimer.h"
 #import "SeekingView.h"
@@ -62,20 +63,20 @@ bool stillWait = true;
             [hiderTimer updateCountdown :e.data];
 
         }
-//        @try{
-//            HiderTimer *hiderTimer = [_mainView getHiderTimer];
-//            [hiderTimer updateCountdown :e.data];
-//        }
-//        @catch(NSException* e){
-//            HiderWaitView *hiderWaitView = [_mainView getHiderWaitView];
-//            [hiderWaitView performSegueWithIdentifier:@"startHiderTimer" sender:hiderWaitView];
-//        }
+
     }];
     
     EventSource *sourceMarco = [EventSource eventSourceWithURL:serverURL];
     [sourceMarco addEventListener:@"MARCO" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
-        AudioServicesPlaySystemSound (1005);
+        //AudioServicesPlaySystemSound (1005);
+        NSString* path = [[NSBundle mainBundle] pathForResource:@"chirp" ofType:@"aiff"];
+        NSURL* file = [NSURL fileURLWithPath:path];
+        
+        audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:file error:nil];\
+        [audioPlayer prepareToPlay];
+        [audioPlayer play];
+        // play our own sound
         
     }];
 
@@ -90,6 +91,8 @@ bool stillWait = true;
     [sourcePlayersAdded addEventListener:@"ADD_PLAYER" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
         
+        _numPlayers = e.data;
+        
         @try {
             HiderWaitView *hiderWaitView = [_mainView getHiderWaitView];
             [hiderWaitView updatePlayersLeft :e.data];
@@ -102,20 +105,6 @@ bool stillWait = true;
 
     }];
     
-//    EventSource *sourcePlayersRemoved = [EventSource eventSourceWithURL:serverURL];
-//    [sourcePlayersRemoved addEventListener:@"REMOVE_PLAYER" handler:^(Event *e) {
-//        NSLog(@"%@: %@", e.event, e.data);
-//        
-//        @try {
-//            HiderWaitView *hiderWaitView2 = [_mainView getHiderWaitView];
-//            [hiderWaitView2 updatePlayersLeft :e.data];
-//            
-//            HidingView *hidingView2 = [_mainView getHidingView];
-//            [hidingView2 updatePlayersLeft :e.data];
-//        }
-//        @catch (NSException *exception) {}
-//        
-//    }];
     
     [self requestAddPlayer];
     
@@ -147,6 +136,8 @@ bool stillWait = true;
     EventSource *sourcePlayersAdded = [EventSource eventSourceWithURL:serverURL];
     [sourcePlayersAdded addEventListener:@"ADD_PLAYER" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
+        
+        _numPlayers = e.data;
         
         @try {
             SeekerWaitView *tmpseekerWaitView = [_mainView getSeekerWaitView];
@@ -218,9 +209,6 @@ bool stillWait = true;
     NSURLRequest *requestCountDown = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
     NSLog(@"here1");
     NSURLConnection *connCountDown = [[NSURLConnection alloc] initWithRequest:requestCountDown delegate:self];
-//    NSURLResponse *response = nil;
-//    NSError *error = nil;
-//    [NSURLConnection sendSynchronousRequest:requestCountDown returningResponse:&response error:&error];
     NSLog(@"here2");
 }
 

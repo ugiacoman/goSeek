@@ -9,6 +9,7 @@
 #ifndef goSeek_network_h
 #define goSeek_network_h
 
+@class AVAudioPlayer;
 @class UIViewController;
 @class ViewController;
 @class SeekerTimer;
@@ -19,6 +20,8 @@
     NSMutableData *_responseData;
     NSString *_roomcode;
     ViewController *_mainView;
+    @public NSString *_numPlayers;
+    AVAudioPlayer* audioPlayer;
 
 }
 - (id)init:UIViewController;
