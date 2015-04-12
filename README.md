@@ -12,7 +12,7 @@ When you first open the app, you will be greeted by a landing page. Here, you ma
 
 
 # Stack
-Objective C IOS APP, Python Flask Framework
+IOS APP Objective-C, Python Flask Framework
 
 
 
