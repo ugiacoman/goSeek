@@ -29,6 +29,7 @@ bool goingBack;
 - (IBAction)backButtonPushed:(id)sender {
     goingBack = true;
     [self performSegueWithIdentifier:@"HiderTimerBack" sender:self];
+    [server requestPlayerRemoved];
 }
 
 - (void)didReceiveMemoryWarning {

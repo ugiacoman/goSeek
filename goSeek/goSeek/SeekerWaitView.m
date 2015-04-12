@@ -55,7 +55,9 @@ BOOL goingBack;
 }
 
 - (void) updatePlayersLeft:(NSString *)playersLeft{
+    NSLog (@"Updating players left %@", playersLeft);
     _playersLeftLabel.text = playersLeft;
+     NSLog (@"now is %@", _playersLeftLabel.text);
 }
 
 

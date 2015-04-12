@@ -27,6 +27,8 @@
 - (void)requestMarco;
 - (void)requestCountDown;
 - (void)requestClose;
+- (void)requestPlayerRemoved;
+- (void)requestAddPlayer;
 
 @end
 

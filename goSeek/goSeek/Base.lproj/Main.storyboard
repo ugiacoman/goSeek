@@ -451,6 +451,9 @@
                                     <color key="titleColor" red="0.63958929909999995" green="1" blue="0.94713776350000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="imOutButtonPushed:" destination="jh8-ww-Ksz" eventType="touchUpInside" id="LeH-Cl-KcU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lur-ip-W80">
                                 <rect key="frame" x="0.0" y="0.0" width="85" height="74"/>
@@ -487,6 +490,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="lur-ip-W80" id="p1R-qg-OeT"/>
+                        <outlet property="imOutButton" destination="UKK-YH-MsO" id="tMi-SY-2Ts"/>
                         <segue destination="pnA-0y-uvG" kind="modal" identifier="hiderOver" modalTransitionStyle="flipHorizontal" id="Yyi-il-vjg"/>
                     </connections>
                 </viewController>

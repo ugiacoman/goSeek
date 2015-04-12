@@ -31,8 +31,12 @@
 }
 
 - (void)subscribeToServerHider :(NSString*) roomCode{
+    NSLog(@"ROOMCODE in subscribe: %@", roomCode);
+    _roomcode = roomCode;
     NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/polo?roomcode="];
-    [requestURL appendString:roomCode];
+    NSLog(@"requrl: %@", requestURL);
+    [requestURL appendString:(NSString*)roomCode];
+    NSLog(@"requrl: %@", requestURL);
     NSURL *serverURL = [NSURL URLWithString:requestURL];
     
     EventSource *sourceCountDown = [EventSource eventSourceWithURL:serverURL];
@@ -62,8 +66,8 @@
         //Corynne tells _mainView end personal game
     }];
     
-    EventSource *sourcePlayersLeft = [EventSource eventSourceWithURL:serverURL];
-    [sourceClose addEventListener:@"ADD_PLAYER" handler:^(Event *e) {
+    EventSource *sourcePlayersAdded = [EventSource eventSourceWithURL:serverURL];
+    [sourcePlayersAdded addEventListener:@"ADD_PLAYER" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
         
         HiderWaitView *hiderWaitView = [_mainView getHiderWaitView];
@@ -71,6 +75,17 @@
         
         HidingView *hidingView = [_mainView getHidingView];
         [hidingView updatePlayersLeft :e.data];
+    }];
+    
+    EventSource *sourcePlayersRemoved = [EventSource eventSourceWithURL:serverURL];
+    [sourcePlayersRemoved addEventListener:@"REMOVE_PLAYER" handler:^(Event *e) {
+        NSLog(@"%@: %@", e.event, e.data);
+        
+        HiderWaitView *hiderWaitView2 = [_mainView getHiderWaitView];
+        [hiderWaitView2 updatePlayersLeft :e.data];
+        
+        HidingView *hidingView2 = [_mainView getHidingView];
+        [hidingView2 updatePlayersLeft :e.data];
     }];
     
     [self requestAddPlayer];
@@ -100,12 +115,20 @@
         //Corynne tells _mainView end personal game
     }];
     
-    EventSource *sourcePlayersLeft = [EventSource eventSourceWithURL:serverURL];
-    [sourceClose addEventListener:@"ADD_PLAYER" handler:^(Event *e) {
+    EventSource *sourcePlayersAdded = [EventSource eventSourceWithURL:serverURL];
+    [sourcePlayersAdded addEventListener:@"ADD_PLAYER" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
         
         SeekingView *seekingView = [_mainView getSeekingView];
         [seekingView updatePlayersLeft :e.data];
+    }];
+    
+    EventSource *sourcePlayersRemoved = [EventSource eventSourceWithURL:serverURL];
+    [sourcePlayersRemoved addEventListener:@"REMOVE_PLAYER" handler:^(Event *e) {
+        NSLog(@"%@: %@", e.event, e.data);
+        
+        SeekingView *seekingView2 = [_mainView getSeekingView];
+        [seekingView2 updatePlayersLeft :e.data];
     }];
     
 }
@@ -119,6 +142,18 @@
     
     
     NSURLConnection *connAddPlayer = [[NSURLConnection alloc] initWithRequest:requestAddPlayer delegate:self];
+}
+
+
+- (void)requestPlayerRemoved{
+    // Requests server to send out new roomcode
+    // picked up by subscribers, not this method
+    NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/remove_player?roomcode="];
+    [requestURL appendString:_roomcode];
+    NSURLRequest *requestRemovePlayer = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
+    
+    
+    NSURLConnection *connRemovePlayer = [[NSURLConnection alloc] initWithRequest:requestRemovePlayer delegate:self];
 }
 
 
@@ -178,17 +213,23 @@
     NSString* temp = [json objectForKey:@"roomcode"];
     if (temp != nil){
         _roomcode = temp;
-        NSLog(_roomcode);
-        [self subscribeToServerSeeker];
+        NSLog(@"%@", _roomcode);
+        @try{
+            [self subscribeToServerSeeker];
+        }
+        @catch (NSException * e) {
+            NSLog(@"Exception: %@", e);
+        }
+        @try{
+            SeekerWaitView *seekerWaitView3 = [_mainView getSeekerWaitView];
+            [seekerWaitView3 updateRoomCode :_roomcode];
+        }
+        @catch (NSException * e) {
+             NSLog(@"Exception: %@", e);
+        }
     }
 
-    @try{
-        SeekerWaitView *seekerWaitView = [_mainView getSeekerWaitView];
-        [seekerWaitView updateRoomCode :_roomcode];
-    }
-    @catch (NSException * e) {
-        NSLog(@"Exception: %@", e);
-    }
+    
     
     
     

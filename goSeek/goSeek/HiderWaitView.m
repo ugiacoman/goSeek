@@ -27,6 +27,7 @@ BOOL goingBack;
 - (IBAction)backButtonPressed:(id)sender {
     goingBack = true;
     [self performSegueWithIdentifier:@"HiderWaitBack" sender:self];
+    [server requestPlayerRemoved];
 }
 
 

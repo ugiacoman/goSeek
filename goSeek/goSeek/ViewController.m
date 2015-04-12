@@ -71,7 +71,7 @@ int gameCount = 0;
 - (IBAction)returnKeyButton:(id)sender {
     NSString *inputCode;
     inputCode = gameCodeField.text;
-    NSLog (@"%@", inputCode);
+    NSLog (@"roomcode from text field: %@", inputCode);
     if(gameCodeField == nil){
         NSLog(@"FIELD NULL");
     }

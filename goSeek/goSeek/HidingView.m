@@ -13,6 +13,7 @@
 @interface HidingView ()
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UILabel *playersLeftLabel;
+@property (strong, nonatomic) IBOutlet UIButton *imOutButton;
 
 @end
 
@@ -28,6 +29,10 @@ bool goingBack;
 - (IBAction)backButtonPushed:(id)sender {
     goingBack = true;
     [self performSegueWithIdentifier:@"HidingBack" sender:self];
+    [server requestPlayerRemoved];
+}
+- (IBAction)imOutButtonPushed:(id)sender {
+    [server requestPlayerRemoved];
 }
 
 - (void)didReceiveMemoryWarning {
