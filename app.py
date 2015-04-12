@@ -8,7 +8,7 @@ import json
 import string
 import random
 
-from flask import Flask, Response
+from flask import Flask, Response, request
 
 import time
 
@@ -37,9 +37,7 @@ def id_generator(size=4, chars=string.ascii_uppercase):
 
 
 app = Flask(__name__)
-subscriptions = []
-seekers = []
-player_count = 0
+rooms = {}
 
 # Client code consumes like this.
 @app.route("/")
@@ -77,27 +75,37 @@ def debug():
 # generates a roomcode string and returns json
 @app.route("/roomcode")
 def roomcode():
-    global player_count
-    player_count = 0
     roomcode = id_generator()
+    while roomcode in rooms.keys():
+        roomcode = id_generator()
+    rooms[roomcode] = {"seekers": [], "hiders": [], "player_count": 0}
     return json.dumps({"roomcode": roomcode})
 
 # seeker wants hiders to yell polo
 @app.route("/marco")
 def marco():
+    roomcode = request.args.get("roomcode", None)
+    if not roomcode or roomcode not in rooms.keys():
+        return "error", 404
     def notify():
+        hiders = rooms[roomcode]["hiders"]
         msg = ("marco", "MARCO")
-        map(lambda sub: sub.put(msg), subscriptions)
+        map(lambda sub: sub.put(msg), hiders)
     gevent.spawn(notify)
     return "OK"
 
 # seeker initiates countdown
 @app.route("/countdown")
 def test():
+    roomcode = request.args.get("roomcode", None)
+    if not roomcode or roomcode not in rooms.keys():
+        return "error", 404
     def notify():
+        seekers = rooms[roomcode]["seekers"]
+        hiders = rooms[roomcode]["hiders"]
         for x in xrange(5,-1,-1):
             msg = (str(x), "COUNTDOWN")
-            map(lambda sub: sub.put(msg), subscriptions)
+            map(lambda sub: sub.put(msg), hiders)
             map(lambda sub: sub.put(msg), seekers)
             gevent.sleep(1)
     gevent.spawn(notify)
@@ -105,28 +113,43 @@ def test():
 
 @app.route("/add_player")
 def add_player():
-    global player_count
-    player_count += 1
+    roomcode = request.args.get("roomcode", None)
+    if not roomcode or roomcode not in rooms.keys():
+        return "error", 404
+    rooms[roomcode]["player_count"] += 1
     def notify():
+        seekers = rooms[roomcode]["seekers"]
+        hiders = rooms[roomcode]["hiders"]
+        player_count = rooms[roomcode]["player_count"]
         msg = (str(player_count), "ADD_PLAYER")
-        map(lambda sub: sub.put(msg), subscriptions)
         map(lambda sub: sub.put(msg), seekers)
+        map(lambda sub: sub.put(msg), hiders)
     gevent.spawn(notify)
     return "OK"
 
 # close connection to server
 @app.route("/close")
 def close():
+    roomcode = request.args.get("roomcode", None)
+    if not roomcode or roomcode not in rooms.keys():
+        return "error", 404
     def notify():
+        seekers = rooms[roomcode]["seekers"]
+        hiders = rooms[roomcode]["hiders"]
         msg = ("close", "CLOSE")
-        map(lambda sub: sub.put(msg), subscriptions)
+        map(lambda sub: sub.put(msg), seekers)
+        map(lambda sub: sub.put(msg), hiders)
     gevent.spawn(notify)
     return "OK"
 
 # event source for hiders
 @app.route("/seeker")
 def seeker():
+    roomcode = request.args.get("roomcode", None)
+    if not roomcode or roomcode not in rooms.keys():
+        return "error", 404
     def gen():
+        seekers = rooms[roomcode]["seekers"]
         q = Queue()
         seekers.append(q)
         try:
@@ -142,16 +165,20 @@ def seeker():
 # event source for hiders
 @app.route("/polo")
 def polo():
+    roomcode = request.args.get("roomcode", None)
+    if not roomcode or roomcode not in rooms.keys():
+        return "error", 404
     def gen():
+        hiders = rooms[roomcode]["hiders"]
         q = Queue()
-        subscriptions.append(q)
+        hiders.append(q)
         try:
             while True:
                 (data, etype) = q.get()
                 ev = ServerSentEvent(str(data), str(etype))
                 yield ev.encode()
         except GeneratorExit: # Or maybe use flask signals
-            subscriptions.remove(q)
+            hiders.remove(q)
 
     return Response(gen(), mimetype="text/event-stream")
 
