@@ -127,6 +127,22 @@ def add_player():
     gevent.spawn(notify)
     return "OK"
 
+@app.route("/remove_player")
+def remove_player():
+    roomcode = request.args.get("roomcode", None)
+    if not roomcode or roomcode not in rooms.keys():
+        return "error", 404
+    rooms[roomcode]["player_count"] -= 1
+    def notify():
+        seekers = rooms[roomcode]["seekers"]
+        hiders = rooms[roomcode]["hiders"]
+        player_count = rooms[roomcode]["player_count"]
+        msg = (str(player_count), "REMOVE_PLAYER")
+        map(lambda sub: sub.put(msg), seekers)
+        map(lambda sub: sub.put(msg), hiders)
+    gevent.spawn(notify)
+    return "OK"         
+
 # close connection to server
 @app.route("/close")
 def close():
