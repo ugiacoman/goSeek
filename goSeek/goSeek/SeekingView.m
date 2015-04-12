@@ -11,9 +11,9 @@
 #import "network.h"
 
 @interface SeekingView ()
-@property (strong, nonatomic) IBOutlet UILabel *playersLeftLabel;
 @property (strong, nonatomic) IBOutlet UIButton *marcoButton;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (strong, nonatomic) IBOutlet UILabel *playersLeftLabel;
 
 @end
 
@@ -38,6 +38,8 @@ double prevTime = 0;
     
 }
 - (IBAction)marcoButton:(id)sender {
+    NSLog(@"Imarco button pushed");
+    NSLog(@"server: %@", server);
     [server requestMarco];
 //    [_marcoButton setEnabled:NO];
 //    _marcoButton.alpha = 0.25;

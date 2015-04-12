@@ -30,6 +30,13 @@ bool stillWait = true;
     return self;
 }
 
+- (NSString*)getRoomCode{
+    return _roomcode;
+}
+- (void)setRoomCode:(NSString*)rmCde{
+    _roomcode = rmCde;
+}
+
 - (void)subscribeToServerHider :(NSString*) roomCode{
     NSLog(@"ROOMCODE in subscribe: %@", roomCode);
     _roomcode = roomCode;
@@ -95,20 +102,20 @@ bool stillWait = true;
 
     }];
     
-    EventSource *sourcePlayersRemoved = [EventSource eventSourceWithURL:serverURL];
-    [sourcePlayersRemoved addEventListener:@"REMOVE_PLAYER" handler:^(Event *e) {
-        NSLog(@"%@: %@", e.event, e.data);
-        
-        @try {
-            HiderWaitView *hiderWaitView2 = [_mainView getHiderWaitView];
-            [hiderWaitView2 updatePlayersLeft :e.data];
-            
-            HidingView *hidingView2 = [_mainView getHidingView];
-            [hidingView2 updatePlayersLeft :e.data];
-        }
-        @catch (NSException *exception) {}
-        
-    }];
+//    EventSource *sourcePlayersRemoved = [EventSource eventSourceWithURL:serverURL];
+//    [sourcePlayersRemoved addEventListener:@"REMOVE_PLAYER" handler:^(Event *e) {
+//        NSLog(@"%@: %@", e.event, e.data);
+//        
+//        @try {
+//            HiderWaitView *hiderWaitView2 = [_mainView getHiderWaitView];
+//            [hiderWaitView2 updatePlayersLeft :e.data];
+//            
+//            HidingView *hidingView2 = [_mainView getHidingView];
+//            [hidingView2 updatePlayersLeft :e.data];
+//        }
+//        @catch (NSException *exception) {}
+//        
+//    }];
     
     [self requestAddPlayer];
     
@@ -142,21 +149,13 @@ bool stillWait = true;
         NSLog(@"%@: %@", e.event, e.data);
         
         @try {
-            SeekerWaitView *seekerWaitView = [_mainView getSeekerWaitView];
-            [seekerWaitView updatePlayersLeft :e.data];
+            SeekerWaitView *tmpseekerWaitView = [_mainView getSeekerWaitView];
+            [tmpseekerWaitView updatePlayersLeft :e.data];
         }
         @catch (NSException *exception) {}
     }];
     
-    EventSource *sourcePlayersRemoved = [EventSource eventSourceWithURL:serverURL];
-    [sourcePlayersRemoved addEventListener:@"REMOVE_PLAYER" handler:^(Event *e) {
-        NSLog(@"%@: %@", e.event, e.data);
-        @try {
-            SeekingView *seekingView2 = [_mainView getSeekingView];
-            [seekingView2 updatePlayersLeft :e.data];
-        }
-        @catch (NSException *exception) {}
-    }];
+
     
 }
 
@@ -198,26 +197,30 @@ bool stillWait = true;
     // picked up by subscribers
     NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/marco?roomcode="];
     [requestURL appendString:_roomcode];
+    NSLog(@"Req url: %@", requestURL);
     NSURLRequest *requestMarco = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
     
     NSURLConnection *connMarco = [[NSURLConnection alloc] initWithRequest:requestMarco delegate:self];
 }
 
-- (void)requestCountDown{
+- (void)requestCountDown:(NSString*)roomcode{
     // Request CountDown, time determined by server
     // Server will send out time updates every second to
     // all subscribers
     NSLog(@"startef requestcountdown");
     NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/countdown?roomcode="];
     NSLog(@"requesturl: %@", requestURL);
-    NSLog(@"_roomcode: %@", _roomcode);
-    [requestURL appendString:_roomcode];
+    NSLog(@"_roomcode: %@", roomcode);
+    [requestURL appendString:roomcode];
     
     NSLog(@"requesturl: %@", requestURL);
     
     NSURLRequest *requestCountDown = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
     NSLog(@"here1");
     NSURLConnection *connCountDown = [[NSURLConnection alloc] initWithRequest:requestCountDown delegate:self];
+//    NSURLResponse *response = nil;
+//    NSError *error = nil;
+//    [NSURLConnection sendSynchronousRequest:requestCountDown returningResponse:&response error:&error];
     NSLog(@"here2");
 }
 

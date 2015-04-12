@@ -19,16 +19,20 @@
     NSMutableData *_responseData;
     NSString *_roomcode;
     ViewController *_mainView;
+
 }
 - (id)init:UIViewController;
 - (void)subscribeToServerHider:(NSString*)roomCode;
 - (void)subscribeToServerSeeker;
 - (void)requestRoomcode;
 - (void)requestMarco;
-- (void)requestCountDown;
+- (void)requestCountDown:(NSString*)rmCde ;
 - (void)requestClose;
 - (void)requestPlayerRemoved;
 - (void)requestAddPlayer;
+-(NSString*)getRoomCode;
+-(void)setRoomCode:(NSString*)rmCde ;
+
 
 @end
 

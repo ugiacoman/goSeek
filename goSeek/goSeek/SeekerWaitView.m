@@ -30,6 +30,8 @@ BOOL goingBack;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // [server requestCountDown];
     goingBack = false;
     // Do any additional setup after loading the view, typically from a nib.
    // _roomCodeLabel.text = roomCode;
@@ -37,6 +39,7 @@ BOOL goingBack;
     
 }
 - (IBAction)playButtonPushed:(id)sender {
+    
     [self performSegueWithIdentifier:@"StartSeekerTimer" sender:self];
 }
 
@@ -49,9 +52,13 @@ BOOL goingBack;
 {
     if(goingBack == false){
         NSLog (@"SEgue to seektimer, server: %@", server);
+        
         seekerTimer = (UIViewController *)segue.destinationViewController;
-        [server requestCountDown];
+        
         seekerTimer->server = server;
+        //[server requestCountDown];
+         NSLog (@"seektimr server: %@", seekerTimer->server);
+        
     }
 }
 

@@ -23,7 +23,7 @@ bool goingBack;
     [super viewDidLoad];
     goingBack = false;
     NSLog(@"IN HIDER TIMER");
-    [server requestCountDown];
+    //[server requestCountDown:(NSString*)[server getRoomCode]];
     
 }
 - (IBAction)backButtonPushed:(id)sender {

@@ -93,14 +93,14 @@ int gameCount = 0;
 }
 
 
-- (BOOL)textFieldShouldReturn:(UITextField *)sender {
-    //gameCode= sender.text;
-    //NSLog (@"%@", sender.text);
-    NSLog (@"Before");
-    [self performSegueWithIdentifier:@"HiderWait" sender:self];
-    NSLog (@"After");
-    return YES;
-}
+//- (BOOL)textFieldShouldReturn:(UITextField *)sender {
+//    //gameCode= sender.text;
+//    //NSLog (@"%@", sender.text);
+//    NSLog (@"Before");
+//    [self performSegueWithIdentifier:@"HiderWait" sender:self];
+//    NSLog (@"After");
+//    return YES;
+//}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"touchesBegan:withEvent:");
@@ -127,7 +127,7 @@ int gameCount = 0;
     
     
 //    [server requestMarco];
-//    [server requestCountDown];
+    //[server requestCountDown];
     if (server == nil){
         NSLog(@"server is nil");
     }

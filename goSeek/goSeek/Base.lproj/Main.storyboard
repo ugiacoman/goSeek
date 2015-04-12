@@ -211,7 +211,7 @@
                     <connections>
                         <outlet property="backButton" destination="3m8-Qo-0bu" id="j1C-Ma-MlJ"/>
                         <outlet property="marcoButton" destination="OJP-bi-2VV" id="qqq-dU-xUf"/>
-                        <outlet property="playersLeftLabel" destination="Lcb-4l-TGX" id="P3H-tY-tJY"/>
+                        <outlet property="playersLeftLabel" destination="Lcb-4l-TGX" id="0oa-oR-MPM"/>
                         <segue destination="pnA-0y-uvG" kind="modal" identifier="seekerOver" modalTransitionStyle="flipHorizontal" id="iui-S9-Xq2"/>
                     </connections>
                 </viewController>
@@ -491,6 +491,7 @@
                     <connections>
                         <outlet property="backButton" destination="lur-ip-W80" id="p1R-qg-OeT"/>
                         <outlet property="imOutButton" destination="UKK-YH-MsO" id="tMi-SY-2Ts"/>
+                        <outlet property="playersLeftLabel" destination="yuN-GC-9xy" id="upG-zF-tqz"/>
                         <segue destination="pnA-0y-uvG" kind="modal" identifier="hiderOver" modalTransitionStyle="flipHorizontal" id="Yyi-il-vjg"/>
                     </connections>
                 </viewController>
@@ -509,7 +510,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Yyi-il-vjg"/>
-        <segue reference="DA8-2A-SmW"/>
+        <segue reference="iui-S9-Xq2"/>
+        <segue reference="mA8-Mg-Oor"/>
     </inferredMetricsTieBreakers>
 </document>

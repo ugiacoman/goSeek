@@ -25,7 +25,12 @@ bool goingBack;
     goingBack = false;
     NSLog(@"IN SEEKER TIMER");
     NSLog(@"server: %@", server);
-//    [server requestCountDown];
+    
+    goSeekConnection *conn = [[goSeekConnection alloc] init:self];
+    
+    //[conn setRoomcode:[server getRoomCode]];
+//    conn->_roomcode = [server valueForKey:@"_roomcode"];
+    [conn requestCountDown:(NSString*)[server getRoomCode]];
     
 }
 - (IBAction)backButtonPushed:(id)sender {
@@ -51,7 +56,7 @@ bool goingBack;
 {
     if(goingBack == false){
     seekingView = (UIViewController *)segue.destinationViewController;
-    seekingView->server = self->server;
+    seekingView->server = server;
     }
     
 }
