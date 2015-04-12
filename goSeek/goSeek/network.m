@@ -70,22 +70,31 @@
     [sourcePlayersAdded addEventListener:@"ADD_PLAYER" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
         
-        HiderWaitView *hiderWaitView = [_mainView getHiderWaitView];
-        [hiderWaitView updatePlayersLeft :e.data];
-        
-        HidingView *hidingView = [_mainView getHidingView];
-        [hidingView updatePlayersLeft :e.data];
+        @try {
+            HiderWaitView *hiderWaitView = [_mainView getHiderWaitView];
+            [hiderWaitView updatePlayersLeft :e.data];
+            
+            HidingView *hidingView = [_mainView getHidingView];
+            [hidingView updatePlayersLeft :e.data];
+        }
+        @catch (NSException *exception) {
+        }
+
     }];
     
     EventSource *sourcePlayersRemoved = [EventSource eventSourceWithURL:serverURL];
     [sourcePlayersRemoved addEventListener:@"REMOVE_PLAYER" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
         
-        HiderWaitView *hiderWaitView2 = [_mainView getHiderWaitView];
-        [hiderWaitView2 updatePlayersLeft :e.data];
+        @try {
+            HiderWaitView *hiderWaitView2 = [_mainView getHiderWaitView];
+            [hiderWaitView2 updatePlayersLeft :e.data];
+            
+            HidingView *hidingView2 = [_mainView getHidingView];
+            [hidingView2 updatePlayersLeft :e.data];
+        }
+        @catch (NSException *exception) {}
         
-        HidingView *hidingView2 = [_mainView getHidingView];
-        [hidingView2 updatePlayersLeft :e.data];
     }];
     
     [self requestAddPlayer];
@@ -119,16 +128,21 @@
     [sourcePlayersAdded addEventListener:@"ADD_PLAYER" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
         
-        SeekingView *seekingView = [_mainView getSeekingView];
-        [seekingView updatePlayersLeft :e.data];
+        @try {
+            SeekingView *seekingView = [_mainView getSeekingView];
+            [seekingView updatePlayersLeft :e.data];
+        }
+        @catch (NSException *exception) {}
     }];
     
     EventSource *sourcePlayersRemoved = [EventSource eventSourceWithURL:serverURL];
     [sourcePlayersRemoved addEventListener:@"REMOVE_PLAYER" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
-        
-        SeekingView *seekingView2 = [_mainView getSeekingView];
-        [seekingView2 updatePlayersLeft :e.data];
+        @try {
+            SeekingView *seekingView2 = [_mainView getSeekingView];
+            [seekingView2 updatePlayersLeft :e.data];
+        }
+        @catch (NSException *exception) {}
     }];
     
 }
