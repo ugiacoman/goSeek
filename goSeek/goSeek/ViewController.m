@@ -159,9 +159,14 @@ int gameCount = 0;
 {
     NSLog (@"mainviewprepareSegue");
     
-    
-    seekerWaitView = (UIViewController *)segue.destinationViewController;
-    seekerWaitView->server = server;
+    if([segue.destinationViewController class] == [SeekerWaitView class]){
+        seekerWaitView = (UIViewController *)segue.destinationViewController;
+        seekerWaitView->server = server;
+    }
+    else{
+        hiderWaitView = (UIViewController *)segue.destinationViewController;
+        hiderWaitView->server = server;
+    }
     
     
 }
