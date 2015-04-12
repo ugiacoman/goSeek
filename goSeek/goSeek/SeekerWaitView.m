@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *roomCodeLabel;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UILabel *playersLeftLabel;
+@property (strong, nonatomic) IBOutlet UIButton *playButton;
 
 @end
 UIButton *playButton;
@@ -35,6 +36,9 @@ BOOL goingBack;
     NSLog (@"IN NEW VIEW");
     
 }
+- (IBAction)playButtonPushed:(id)sender {
+    [self performSegueWithIdentifier:@"StartSeekerTimer" sender:self];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -44,7 +48,9 @@ BOOL goingBack;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if(goingBack == false){
+        NSLog (@"SEgue to seektimer, server: %@", server);
         seekerTimer = (UIViewController *)segue.destinationViewController;
+        [server requestCountDown];
         seekerTimer->server = server;
     }
 }

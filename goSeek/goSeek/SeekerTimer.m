@@ -24,7 +24,8 @@ bool goingBack;
     [super viewDidLoad];
     goingBack = false;
     NSLog(@"IN SEEKER TIMER");
-    [server requestCountDown];
+    NSLog(@"server: %@", server);
+//    [server requestCountDown];
     
 }
 - (IBAction)backButtonPushed:(id)sender {

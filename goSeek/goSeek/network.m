@@ -207,11 +207,18 @@ bool stillWait = true;
     // Request CountDown, time determined by server
     // Server will send out time updates every second to
     // all subscribers
+    NSLog(@"startef requestcountdown");
     NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/countdown?roomcode="];
+    NSLog(@"requesturl: %@", requestURL);
+    NSLog(@"_roomcode: %@", _roomcode);
     [requestURL appendString:_roomcode];
-    NSURLRequest *requestCountDown = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
     
+    NSLog(@"requesturl: %@", requestURL);
+    
+    NSURLRequest *requestCountDown = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
+    NSLog(@"here1");
     NSURLConnection *connCountDown = [[NSURLConnection alloc] initWithRequest:requestCountDown delegate:self];
+    NSLog(@"here2");
 }
 
 - (void)requestClose{

@@ -123,8 +123,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playButton:" destination="d2R-Sz-Y42" eventType="touchUpInside" id="in9-Yt-lWs"/>
-                                    <segue destination="oVU-qQ-hUG" kind="modal" id="hHC-hk-ayc"/>
+                                    <action selector="playButtonPushed:" destination="d2R-Sz-Y42" eventType="touchUpInside" id="yBj-XX-IJF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPF-rG-Ta6">
@@ -146,6 +145,7 @@
                         <outlet property="backButton" destination="pyL-qC-tGE" id="wwi-2k-Lj4"/>
                         <outlet property="playersLeftLabel" destination="cYF-WL-r2j" id="3Wo-Ai-I8F"/>
                         <outlet property="roomCodeLabel" destination="ZPF-rG-Ta6" id="S15-TF-xKu"/>
+                        <segue destination="oVU-qQ-hUG" kind="modal" identifier="StartSeekerTimer" id="JPy-Qf-HfT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7g2-2Q-kDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -509,7 +509,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="DA8-2A-SmW"/>
         <segue reference="Yyi-il-vjg"/>
+        <segue reference="DA8-2A-SmW"/>
     </inferredMetricsTieBreakers>
 </document>
