@@ -21,7 +21,7 @@
     ViewController *_mainView;
 }
 - (id)init:UIViewController;
-- (void)subscribeToServerHider;
+- (void)subscribeToServerHider:(NSString*)roomCode;
 - (void)subscribeToServerSeeker;
 - (void)requestRoomcode;
 - (void)requestMarco;

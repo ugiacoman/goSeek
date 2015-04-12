@@ -77,17 +77,17 @@ int gameCount = 0;
     }
     NSLog(@"returnkey");
     if(gameCount == 0){
-        [server subscribeToServerHider];
+        [server subscribeToServerHider:inputCode];
     }
     [sender resignFirstResponder];
     NSLog (@"Leaving main view as hider");
     gameCount++;
 }
 - (IBAction)startGame:(id)sender {
-    if(gameCount == 0){
-        [server subscribeToServerSeeker];
-    }
     [server requestRoomcode];
+//    if(gameCount == 0){
+//        [server subscribeToServerSeeker];
+//    }
     NSLog (@"Starting new game!");
     gameCount++;
 }
