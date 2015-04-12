@@ -46,10 +46,10 @@ BOOL goingBack;
 
 - (void) updatePlayersLeft:(NSString *)playersLeft{
     _playersLeftLabel.text = playersLeft;
-    if ([playersLeft isEqual: @"0"]){
-        NSLog(@"countdown finished");
-        [self performSegueWithIdentifier:@"startHiderTimer" sender:self];
-    }
+//    if ([playersLeft isEqual: @"0"]){
+//        NSLog(@"countdown finished");
+//        [self performSegueWithIdentifier:@"startHiderTimer" sender:self];
+//    }
 }
 
 
