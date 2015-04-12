@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		605EB7681ADA64C300F6AA7B /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 605EB7671ADA64C300F6AA7B /* 1.png */; };
+		6081C1C31AD910B40057B389 /* HiderWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6081C1C21AD910B40057B389 /* HiderWaitView.m */; };
+		60BB330D1AD9EE9900F048E6 /* SeekingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BB330C1AD9EE9900F048E6 /* SeekingView.m */; };
+		60BB33151ADA0BA700F048E6 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60BB33101ADA0BA700F048E6 /* 2.png */; };
+		60BB33161ADA0BA700F048E6 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 60BB33111ADA0BA700F048E6 /* 3.png */; };
+		60BB33171ADA0BA700F048E6 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 60BB33121ADA0BA700F048E6 /* 4.png */; };
+		60BB33181ADA0BA700F048E6 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 60BB33131ADA0BA700F048E6 /* 5.png */; };
+		60BB331B1ADA0F5400F048E6 /* HidingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BB331A1ADA0F5400F048E6 /* HidingView.m */; };
 		60C5DFF51AD8E21B009E73A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DFF41AD8E21B009E73A2 /* main.m */; };
 		60C5DFF81AD8E21B009E73A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DFF71AD8E21B009E73A2 /* AppDelegate.m */; };
 		60C5DFFB1AD8E21B009E73A2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5DFFA1AD8E21B009E73A2 /* ViewController.m */; };
@@ -14,6 +22,12 @@
 		60C5E0001AD8E21B009E73A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60C5DFFF1AD8E21B009E73A2 /* Images.xcassets */; };
 		60C5E0031AD8E21B009E73A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60C5E0011AD8E21B009E73A2 /* LaunchScreen.xib */; };
 		60C5E00F1AD8E21B009E73A2 /* goSeekTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5E00E1AD8E21B009E73A2 /* goSeekTests.m */; };
+		60C5E01D1AD902CC009E73A2 /* SeekerWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */; };
+		60E7438B1AD94B2F0097E616 /* SeekerTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E7438A1AD94B2F0097E616 /* SeekerTimer.m */; };
+		60E7438F1AD94C530097E616 /* HiderTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E7438E1AD94C530097E616 /* HiderTimer.m */; };
+		725D77801AD9BEA100B5D5DC /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 725D777F1AD9BEA100B5D5DC /* EventSource.m */; };
+		725D77831AD9BFD500B5D5DC /* network.m in Sources */ = {isa = PBXBuildFile; fileRef = 725D77821AD9BFD500B5D5DC /* network.m */; };
+		725D77851AD9C12400B5D5DC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725D77841AD9C12400B5D5DC /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +41,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		605EB7671ADA64C300F6AA7B /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		6081C1C21AD910B40057B389 /* HiderWaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiderWaitView.m; sourceTree = "<group>"; };
+		60BB330C1AD9EE9900F048E6 /* SeekingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekingView.m; sourceTree = "<group>"; };
+		60BB330E1AD9EEE400F048E6 /* SeekingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeekingView.h; sourceTree = "<group>"; };
+		60BB33101ADA0BA700F048E6 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = "../../../../../Downloads/misc/Put in Main folder next to controllers/2.png"; sourceTree = "<group>"; };
+		60BB33111ADA0BA700F048E6 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = "../../../../../Downloads/misc/Put in Main folder next to controllers/3.png"; sourceTree = "<group>"; };
+		60BB33121ADA0BA700F048E6 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = "../../../../../Downloads/misc/Put in Main folder next to controllers/4.png"; sourceTree = "<group>"; };
+		60BB33131ADA0BA700F048E6 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = "../../../../../Downloads/misc/Put in Main folder next to controllers/5.png"; sourceTree = "<group>"; };
+		60BB33191ADA0F1200F048E6 /* HidingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HidingView.h; sourceTree = "<group>"; };
+		60BB331A1ADA0F5400F048E6 /* HidingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HidingView.m; sourceTree = "<group>"; };
+		60BB331C1ADA2D3800F048E6 /* HiderWaitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HiderWaitView.h; sourceTree = "<group>"; };
 		60C5DFEF1AD8E21B009E73A2 /* goSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C5DFF31AD8E21B009E73A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60C5DFF41AD8E21B009E73A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +65,18 @@
 		60C5E0081AD8E21B009E73A2 /* goSeekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = goSeekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C5E00D1AD8E21B009E73A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60C5E00E1AD8E21B009E73A2 /* goSeekTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = goSeekTests.m; sourceTree = "<group>"; };
+		60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekerWaitView.m; sourceTree = "<group>"; };
+		60C5E01E1AD903FE009E73A2 /* SeekerWaitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeekerWaitView.h; sourceTree = "<group>"; };
+		60E7438A1AD94B2F0097E616 /* SeekerTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekerTimer.m; sourceTree = "<group>"; };
+		60E7438C1AD94B680097E616 /* SeekerTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeekerTimer.h; sourceTree = "<group>"; };
+		60E7438D1AD94C160097E616 /* HiderTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HiderTimer.h; sourceTree = "<group>"; };
+		60E7438E1AD94C530097E616 /* HiderTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiderTimer.m; sourceTree = "<group>"; };
+		725D777D1AD9BEA100B5D5DC /* EventSource-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EventSource-Prefix.pch"; sourceTree = "<group>"; };
+		725D777E1AD9BEA100B5D5DC /* EventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSource.h; sourceTree = "<group>"; };
+		725D777F1AD9BEA100B5D5DC /* EventSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventSource.m; sourceTree = "<group>"; };
+		725D77811AD9BF8F00B5D5DC /* network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = network.h; sourceTree = "<group>"; };
+		725D77821AD9BFD500B5D5DC /* network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = network.m; sourceTree = "<group>"; };
+		725D77841AD9C12400B5D5DC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725D77851AD9C12400B5D5DC /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +101,7 @@
 		60C5DFE61AD8E21B009E73A2 = {
 			isa = PBXGroup;
 			children = (
+				725D77841AD9C12400B5D5DC /* AudioToolbox.framework */,
 				60C5DFF11AD8E21B009E73A2 /* goSeek */,
 				60C5E00B1AD8E21B009E73A2 /* goSeekTests */,
 				60C5DFF01AD8E21B009E73A2 /* Products */,
@@ -81,12 +120,34 @@
 		60C5DFF11AD8E21B009E73A2 /* goSeek */ = {
 			isa = PBXGroup;
 			children = (
+				605EB7671ADA64C300F6AA7B /* 1.png */,
+				60BB33101ADA0BA700F048E6 /* 2.png */,
+				60BB33111ADA0BA700F048E6 /* 3.png */,
+				60BB33121ADA0BA700F048E6 /* 4.png */,
+				60BB33131ADA0BA700F048E6 /* 5.png */,
+				725D777D1AD9BEA100B5D5DC /* EventSource-Prefix.pch */,
+				725D777E1AD9BEA100B5D5DC /* EventSource.h */,
+				725D777F1AD9BEA100B5D5DC /* EventSource.m */,
+				60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */,
+				60C5E01E1AD903FE009E73A2 /* SeekerWaitView.h */,
+				6081C1C21AD910B40057B389 /* HiderWaitView.m */,
+				60BB331C1ADA2D3800F048E6 /* HiderWaitView.h */,
+				60E7438A1AD94B2F0097E616 /* SeekerTimer.m */,
+				60E7438C1AD94B680097E616 /* SeekerTimer.h */,
+				60E7438E1AD94C530097E616 /* HiderTimer.m */,
+				60E7438D1AD94C160097E616 /* HiderTimer.h */,
+				60BB330C1AD9EE9900F048E6 /* SeekingView.m */,
+				60BB330E1AD9EEE400F048E6 /* SeekingView.h */,
+				60BB331A1ADA0F5400F048E6 /* HidingView.m */,
+				60BB33191ADA0F1200F048E6 /* HidingView.h */,
 				60C5DFF61AD8E21B009E73A2 /* AppDelegate.h */,
 				60C5DFF71AD8E21B009E73A2 /* AppDelegate.m */,
 				60C5DFF91AD8E21B009E73A2 /* ViewController.h */,
 				60C5DFFA1AD8E21B009E73A2 /* ViewController.m */,
 				60C5DFFC1AD8E21B009E73A2 /* Main.storyboard */,
 				60C5DFFF1AD8E21B009E73A2 /* Images.xcassets */,
+				725D77811AD9BF8F00B5D5DC /* network.h */,
+				725D77821AD9BFD500B5D5DC /* network.m */,
 				60C5E0011AD8E21B009E73A2 /* LaunchScreen.xib */,
 				60C5DFF21AD8E21B009E73A2 /* Supporting Files */,
 			);
@@ -168,6 +229,7 @@
 				TargetAttributes = {
 					60C5DFEE1AD8E21B009E73A2 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = CYXPH93J3J;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -204,7 +266,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				605EB7681ADA64C300F6AA7B /* 1.png in Resources */,
 				60C5DFFE1AD8E21B009E73A2 /* Main.storyboard in Resources */,
+				60BB33171ADA0BA700F048E6 /* 4.png in Resources */,
+				60BB33151ADA0BA700F048E6 /* 2.png in Resources */,
+				60BB33161ADA0BA700F048E6 /* 3.png in Resources */,
+				60BB33181ADA0BA700F048E6 /* 5.png in Resources */,
 				60C5E0031AD8E21B009E73A2 /* LaunchScreen.xib in Resources */,
 				60C5E0001AD8E21B009E73A2 /* Images.xcassets in Resources */,
 			);
@@ -224,9 +291,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725D77831AD9BFD500B5D5DC /* network.m in Sources */,
 				60C5DFFB1AD8E21B009E73A2 /* ViewController.m in Sources */,
 				60C5DFF81AD8E21B009E73A2 /* AppDelegate.m in Sources */,
+				60C5E01D1AD902CC009E73A2 /* SeekerWaitView.m in Sources */,
+				725D77801AD9BEA100B5D5DC /* EventSource.m in Sources */,
+				60E7438F1AD94C530097E616 /* HiderTimer.m in Sources */,
+				6081C1C31AD910B40057B389 /* HiderWaitView.m in Sources */,
+				60BB331B1ADA0F5400F048E6 /* HidingView.m in Sources */,
+				60E7438B1AD94B2F0097E616 /* SeekerTimer.m in Sources */,
 				60C5DFF51AD8E21B009E73A2 /* main.m in Sources */,
+				60BB330D1AD9EE9900F048E6 /* SeekingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,9 +423,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = goSeek/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -358,9 +437,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = goSeek/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -417,6 +500,7 @@
 				60C5E0141AD8E21B009E73A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60C5E0151AD8E21B009E73A2 /* Build configuration list for PBXNativeTarget "goSeekTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +509,7 @@
 				60C5E0171AD8E21B009E73A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

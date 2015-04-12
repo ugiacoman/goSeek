@@ -8,8 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@class goSeekConnection;
+@class HiderTimer;
+@class SeekerTimer;
+@class HiderWaitView;
+@class SeekerWaitView;
+@class HidingView;
+@class SeekingView;
 
+@interface ViewController : UIViewController{
 
+}
+
+- (SeekerWaitView*)getSeekerWaitView;
+- (HiderWaitView*)getHiderWaitView;
+- (SeekerTimer*)getSeekerTimer;
+- (HiderTimer*)getHiderTimer;
+- (SeekingView*)getSeekingView;
+- (HidingView*)getHidingView;
 @end
 
