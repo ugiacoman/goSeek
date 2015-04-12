@@ -1,5 +1,5 @@
 # goSeek
-Bitcamp 2015 Team: Ryan Beatty, Corynne Deck, Ulises Giacoman, Nathan Owen
+Bitcamp 2015 Team: Ryan Beatty, Corynne Dech, Ulises Giacoman, Nathan Owen
 
 # Let's play Hide and Go Seek!
 
