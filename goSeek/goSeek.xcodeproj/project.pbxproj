@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60787A3E1ADA416300BF029F /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60787A3D1ADA416300BF029F /* 1.png */; };
+		605EB7681ADA64C300F6AA7B /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 605EB7671ADA64C300F6AA7B /* 1.png */; };
 		6081C1C31AD910B40057B389 /* HiderWaitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6081C1C21AD910B40057B389 /* HiderWaitView.m */; };
 		60BB330D1AD9EE9900F048E6 /* SeekingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BB330C1AD9EE9900F048E6 /* SeekingView.m */; };
 		60BB33151ADA0BA700F048E6 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60BB33101ADA0BA700F048E6 /* 2.png */; };
@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		60787A3D1ADA416300BF029F /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../1.png; sourceTree = "<group>"; };
+		605EB7671ADA64C300F6AA7B /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		6081C1C21AD910B40057B389 /* HiderWaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiderWaitView.m; sourceTree = "<group>"; };
 		60BB330C1AD9EE9900F048E6 /* SeekingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekingView.m; sourceTree = "<group>"; };
 		60BB330E1AD9EEE400F048E6 /* SeekingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeekingView.h; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		60C5DFF11AD8E21B009E73A2 /* goSeek */ = {
 			isa = PBXGroup;
 			children = (
-				60787A3D1ADA416300BF029F /* 1.png */,
+				605EB7671ADA64C300F6AA7B /* 1.png */,
 				60BB33101ADA0BA700F048E6 /* 2.png */,
 				60BB33111ADA0BA700F048E6 /* 3.png */,
 				60BB33121ADA0BA700F048E6 /* 4.png */,
@@ -266,7 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60787A3E1ADA416300BF029F /* 1.png in Resources */,
+				605EB7681ADA64C300F6AA7B /* 1.png in Resources */,
 				60C5DFFE1AD8E21B009E73A2 /* Main.storyboard in Resources */,
 				60BB33171ADA0BA700F048E6 /* 4.png in Resources */,
 				60BB33151ADA0BA700F048E6 /* 2.png in Resources */,

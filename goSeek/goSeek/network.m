@@ -129,8 +129,8 @@
         NSLog(@"%@: %@", e.event, e.data);
         
         @try {
-            SeekingView *seekingView = [_mainView getSeekingView];
-            [seekingView updatePlayersLeft :e.data];
+            SeekerWaitView *seekerWaitView = [_mainView getSeekerWaitView];
+            [seekerWaitView updatePlayersLeft :e.data];
         }
         @catch (NSException *exception) {}
     }];
