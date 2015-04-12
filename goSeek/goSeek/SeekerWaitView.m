@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *roomCodeLabel;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (strong, nonatomic) IBOutlet UILabel *playersLeftLabel;
 
 @end
 UIButton *playButton;
@@ -53,7 +54,9 @@ BOOL goingBack;
    _roomCodeLabel.text = roomCodeUpdate;
 }
 
-
+- (void) updatePlayersLeft:(NSString *)playersLeft{
+    _playersLeftLabel.text = playersLeft;
+}
 
 
 

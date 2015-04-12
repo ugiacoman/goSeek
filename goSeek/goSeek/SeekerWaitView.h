@@ -19,6 +19,7 @@
 }
 
 - (void) updateRoomCode: (NSString *)roomCode;
+- (void) updatePlayersLeft: (NSString *)playersLeft;
 
 @end
 

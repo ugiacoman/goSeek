@@ -13,16 +13,22 @@
 
 @interface HiderTimer ()
 @property (strong, nonatomic) IBOutlet UILabel *timerText;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
 
 @end
 
 @implementation HiderTimer
-
+bool goingBack;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    goingBack = false;
     NSLog(@"IN HIDER TIMER");
     [server requestCountDown];
     
+}
+- (IBAction)backButtonPushed:(id)sender {
+    goingBack = true;
+    [self performSegueWithIdentifier:@"HiderTimerBack" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,8 +46,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    hidingView = (UIViewController *)segue.destinationViewController;
-    hidingView->server = self->server;
+    if(goingBack == false){
+        hidingView = (UIViewController *)segue.destinationViewController;
+        hidingView->server = self->server;
+    }
     
 }
 

@@ -42,7 +42,6 @@
 
 /* Begin PBXFileReference section */
 		6081C1C21AD910B40057B389 /* HiderWaitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HiderWaitView.m; sourceTree = "<group>"; };
-		6081C1C51AD9111F0057B389 /* HiderWaitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HiderWaitView.h; path = ../HiderWaitView.h; sourceTree = "<group>"; };
 		60BB330C1AD9EE9900F048E6 /* SeekingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeekingView.m; sourceTree = "<group>"; };
 		60BB330E1AD9EEE400F048E6 /* SeekingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeekingView.h; sourceTree = "<group>"; };
 		60BB330F1ADA0BA700F048E6 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = "../../../../../Downloads/misc/Put in Main folder next to controllers/1.png"; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		60BB33131ADA0BA700F048E6 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = "../../../../../Downloads/misc/Put in Main folder next to controllers/5.png"; sourceTree = "<group>"; };
 		60BB33191ADA0F1200F048E6 /* HidingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HidingView.h; sourceTree = "<group>"; };
 		60BB331A1ADA0F5400F048E6 /* HidingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HidingView.m; sourceTree = "<group>"; };
+		60BB331C1ADA2D3800F048E6 /* HiderWaitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HiderWaitView.h; sourceTree = "<group>"; };
 		60C5DFEF1AD8E21B009E73A2 /* goSeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goSeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C5DFF31AD8E21B009E73A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60C5DFF41AD8E21B009E73A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -128,26 +128,26 @@
 				725D777D1AD9BEA100B5D5DC /* EventSource-Prefix.pch */,
 				725D777E1AD9BEA100B5D5DC /* EventSource.h */,
 				725D777F1AD9BEA100B5D5DC /* EventSource.m */,
-				6081C1C51AD9111F0057B389 /* HiderWaitView.h */,
 				60C5E01C1AD902CC009E73A2 /* SeekerWaitView.m */,
 				60C5E01E1AD903FE009E73A2 /* SeekerWaitView.h */,
 				6081C1C21AD910B40057B389 /* HiderWaitView.m */,
+				60BB331C1ADA2D3800F048E6 /* HiderWaitView.h */,
+				60E7438A1AD94B2F0097E616 /* SeekerTimer.m */,
+				60E7438C1AD94B680097E616 /* SeekerTimer.h */,
+				60E7438E1AD94C530097E616 /* HiderTimer.m */,
+				60E7438D1AD94C160097E616 /* HiderTimer.h */,
+				60BB330C1AD9EE9900F048E6 /* SeekingView.m */,
+				60BB330E1AD9EEE400F048E6 /* SeekingView.h */,
+				60BB331A1ADA0F5400F048E6 /* HidingView.m */,
+				60BB33191ADA0F1200F048E6 /* HidingView.h */,
 				60C5DFF61AD8E21B009E73A2 /* AppDelegate.h */,
 				60C5DFF71AD8E21B009E73A2 /* AppDelegate.m */,
 				60C5DFF91AD8E21B009E73A2 /* ViewController.h */,
 				60C5DFFA1AD8E21B009E73A2 /* ViewController.m */,
 				60C5DFFC1AD8E21B009E73A2 /* Main.storyboard */,
-				60BB330C1AD9EE9900F048E6 /* SeekingView.m */,
-				60BB33191ADA0F1200F048E6 /* HidingView.h */,
-				60BB331A1ADA0F5400F048E6 /* HidingView.m */,
-				60BB330E1AD9EEE400F048E6 /* SeekingView.h */,
 				60C5DFFF1AD8E21B009E73A2 /* Images.xcassets */,
-				60E7438A1AD94B2F0097E616 /* SeekerTimer.m */,
-				60E7438C1AD94B680097E616 /* SeekerTimer.h */,
-				60E7438D1AD94C160097E616 /* HiderTimer.h */,
 				725D77811AD9BF8F00B5D5DC /* network.h */,
 				725D77821AD9BFD500B5D5DC /* network.m */,
-				60E7438E1AD94C530097E616 /* HiderTimer.m */,
 				60C5E0011AD8E21B009E73A2 /* LaunchScreen.xib */,
 				60C5DFF21AD8E21B009E73A2 /* Supporting Files */,
 			);

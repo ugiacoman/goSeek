@@ -13,19 +13,25 @@
 @interface SeekingView ()
 @property (strong, nonatomic) IBOutlet UILabel *playersLeftLabel;
 @property (strong, nonatomic) IBOutlet UIButton *marcoButton;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
 
 @end
 
 @implementation SeekingView
-
+bool goingBack;
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"IN SEEKER TIMER");
+    goingBack = false;
    // [server requestCountDown];
     
 }
 - (IBAction)marcoButton:(id)sender {
     [server requestMarco];
+}
+- (IBAction)backButtonPushed:(id)sender {
+    goingBack = true;
+    [self performSegueWithIdentifier:@"SeekingBack" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +49,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if(goingBack == false){
+        
+    }
     //    seekerTimer = (UIViewController *)segue.destinationViewController;
     //    // NSLog (@"sending countdown: %@", seekerTimer->countdown);
     //    seekerTimer->server = self->server;

@@ -18,5 +18,7 @@
     @public HiderTimer *hiderTimer;
 }
 
+- (void) updatePlayersLeft: (NSString *)playersLeft;
+
 @end
 

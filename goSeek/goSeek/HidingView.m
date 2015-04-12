@@ -11,17 +11,23 @@
 #import "network.h"
 
 @interface HidingView ()
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UILabel *playersLeftLabel;
 
 @end
 
 @implementation HidingView
-
+bool goingBack;
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"IN HIDING VIEW");
+    goingBack = false;
     // [server requestCountDown];
     
+}
+- (IBAction)backButtonPushed:(id)sender {
+    goingBack = true;
+    [self performSegueWithIdentifier:@"HidingBack" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +45,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if(goingBack == false){
+        
+    }
     //    seekerTimer = (UIViewController *)segue.destinationViewController;
     //    // NSLog (@"sending countdown: %@", seekerTimer->countdown);
     //    seekerTimer->server = self->server;

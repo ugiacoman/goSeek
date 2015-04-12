@@ -56,6 +56,17 @@
         //Corynne tells _mainView end personal game
     }];
     
+    EventSource *sourcePlayersLeft = [EventSource eventSourceWithURL:serverURL];
+    [sourceClose addEventListener:@"ADD_PLAYER" handler:^(Event *e) {
+        NSLog(@"%@: %@", e.event, e.data);
+        
+        HiderWaitView *hiderWaitView = [_mainView getHiderWaitView];
+        [hiderWaitView updatePlayersLeft :e.data];
+        
+        HidingView *hidingView = [_mainView getHidingView];
+        [hidingView updatePlayersLeft :e.data];
+    }];
+    
     [self requestAddPlayer];
     
     
