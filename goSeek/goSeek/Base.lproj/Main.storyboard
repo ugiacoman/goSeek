@@ -86,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="43534" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPF-rG-Ta6">
-                                <rect key="frame" x="81" y="137" width="158" height="79"/>
+                                <rect key="frame" x="0.0" y="137" width="320" height="79"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="49"/>
                                 <color key="textColor" red="0.74608049580000002" green="1" blue="0.60209391219999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="762" y="-33"/>
         </scene>
-        <!--View Controller-->
+        <!--Seeking View-->
         <scene sceneID="VfN-Zz-doD">
             <objects>
-                <viewController id="twi-2V-H7y" sceneMemberID="viewController">
+                <viewController id="twi-2V-H7y" customClass="SeekingView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uxq-ya-qaY"/>
                         <viewControllerLayoutGuide type="bottom" id="OoT-Dc-WjJ"/>
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Gk-Ux-ArQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1515" y="-33"/>
+            <point key="canvasLocation" x="1702" y="-64"/>
         </scene>
         <!--Hider Wait View-->
         <scene sceneID="AE9-iS-8RY">
@@ -346,11 +346,12 @@
                     </view>
                     <connections>
                         <outlet property="timerText" destination="cAv-Co-PdJ" id="jPN-Hq-Rum"/>
+                        <segue destination="twi-2V-H7y" kind="modal" identifier="startSeeking" id="Nbr-Sx-3Sb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlf-5A-ljk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="-49"/>
+            <point key="canvasLocation" x="1161" y="-72"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Sg8-Pu-Wkf">

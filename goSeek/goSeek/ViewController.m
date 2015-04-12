@@ -7,15 +7,19 @@
 //
 
 #import "ViewController.h"
-#import "SeekerWaitView.h"
 #import "EventSource.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "network.h"
 
-@interface ViewController ()
+@interface ViewController (){
+    @public goSeekConnection *server;
+    @public HiderWaitView *hiderWaitView;
+    @public SeekerWaitView *seekerWaitView;
+}
 
 @property (strong, nonatomic) IBOutlet UIButton *startGame;
 @property (strong, nonatomic) IBOutlet UITextField *gameCodeField;
+
 @end
 
 
@@ -35,6 +39,15 @@
     
     
 }
+
+- (SeekerTimer*)getSeekerTimer{
+    return seekerWaitView->seekerTimer;
+}
+
+- (SeekerTimer*)getHiderTimer{
+    return hiderWaitView->hiderTimer;
+}
+
 
 - (IBAction)returnKeyButton:(id)sender {
     NSString *inputCode;
@@ -101,10 +114,10 @@
 {
     NSLog (@"prepareSegue");
     
-    SeekerWaitView *dest = (UIViewController *)segue.destinationViewController;
+    seekerWaitView = (UIViewController *)segue.destinationViewController;
     
-    dest->roomCode = self->gameCode;
-    dest->server = server;
+    seekerWaitView->roomCode = self->gameCode;
+    seekerWaitView->server = server;
     
     
 }

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HiderTimer.h"
+#import "network.h"
 
 @interface HiderTimer ()
 

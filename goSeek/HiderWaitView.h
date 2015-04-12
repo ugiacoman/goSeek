@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SeekerTimer.h"
+#import "HiderTimer.h"
+
+@class goSeekConnection;
+@class HiderTimer;
 
 @interface HiderWaitView : UIViewController{
     @public goSeekConnection *server;
+    @public HiderTimer *hiderTimer;
 }
 
 @end

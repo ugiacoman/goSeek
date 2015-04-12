@@ -8,13 +8,16 @@
 
 #ifndef goSeek_network_h
 #define goSeek_network_h
-#include "ViewController.h"
+
+@class UIViewController;
+@class ViewController;
+@class SeekerTimer;
 
 @interface goSeekConnection : NSObject<NSURLConnectionDelegate>
 {
     NSMutableData *_responseData;
     NSString *_roomcode;
-    UIViewController *_mainView;
+    ViewController *_mainView;
 }
 - (id)init:UIViewController;
 - (void)subscribeToServerHider;

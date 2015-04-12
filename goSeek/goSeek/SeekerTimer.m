@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SeekerTimer.h"
+#import "SeekingView.h"
+#import "network.h"
 
 @interface SeekerTimer ()
 @property (strong, nonatomic) IBOutlet UILabel *timerText;
@@ -20,13 +22,31 @@
     [super viewDidLoad];
     NSLog(@"IN SEEKER TIMER");
     [server requestCountDown];
-    _timerText.text = countdown;
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) updateCountdown: (NSString *)countdown{
+    _timerText.text = countdown;
+    if ([countdown isEqual: @"0"]){
+        NSLog(@"countdown finished");
+        [self performSegueWithIdentifier:@"startSeeking" sender:self];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+//    seekerTimer = (UIViewController *)segue.destinationViewController;
+//    // NSLog (@"sending countdown: %@", seekerTimer->countdown);
+//    seekerTimer->server = self->server;
+    seekingView = (UIViewController *)segue.destinationViewController;
+    // NSLog (@"sending countdown: %@", seekerTimer->countdown);
+    seekingView->server = self->server;
+    
 }
 
 

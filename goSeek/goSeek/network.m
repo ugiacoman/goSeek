@@ -11,6 +11,7 @@
 #import "EventSource.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import "SeekerTimer.h"
+#import "ViewController.h"
 
 @interface goSeekConnection ()
 
@@ -36,8 +37,8 @@
         
         //Corynne tells _mainView to do something with Countdown data
         //Corynne tells _mainView to do something with _roomcode
-        SeekerTimer *view = (SeekerTimer *)_mainView;
-        view->countdown = e.data;
+        SeekerTimer *seekerTimer = [_mainView getSeekerTimer];
+        [seekerTimer updateCountdown :e.data];
         
         //e.data will be strings that represent the number of seconds
         //remaining

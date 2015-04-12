@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SeekerTimer.h"
+
+@class goSeekConnection;
+@class SeekerTimer;
 
 @interface SeekerWaitView : UIViewController{
         @public NSString *roomCode;
         @public NSString *countdown;
         @public goSeekConnection *server;
+        @public SeekerTimer *seekerTimer;
 }
 
 @end

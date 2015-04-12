@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "network.h"
+#import "SeekerWaitView.h"
+#import "HiderWaitView.h"
+
+@class goSeekConnection;
+@class HiderTimer;
 
 @interface ViewController : UIViewController{
     @public NSString *gameCode;
-    @public goSeekConnection *server;
+
 }
+
+- (SeekerTimer*)getSeekerTimer;
+- (HiderTimer*)getHiderTimer;
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import "HiderWaitView.h"
+#import "network.h"
 
 @interface HiderWaitView ()
 

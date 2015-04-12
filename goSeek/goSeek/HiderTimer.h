@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "network.h"
 
+@class goSeekConnection;
+
 @interface HiderTimer : UIViewController{
     @public goSeekConnection *server;
 }

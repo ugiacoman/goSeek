@@ -8,6 +8,7 @@
 
 #import "SeekerWaitView.h"
 #import "SeekerTimer.h"
+#import "network.h"
 
 @interface SeekerWaitView ()
 
@@ -15,7 +16,6 @@
 
 @end
 UIButton *playButton;
-SeekerTimer *timer;
 @implementation SeekerWaitView
 - (IBAction)playButton:(id)sender {
 }
@@ -35,10 +35,9 @@ SeekerTimer *timer;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    timer = (UIViewController *)segue.destinationViewController;
-    timer->countdown = self->countdown;
-    NSLog (@"sending countdown: %@", timer->countdown);
-    timer->server = self->server;
+    seekerTimer = (UIViewController *)segue.destinationViewController;
+   // NSLog (@"sending countdown: %@", seekerTimer->countdown);
+    seekerTimer->server = self->server;
     
 }
 

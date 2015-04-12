@@ -1,5 +1,5 @@
 //
-//  SeekerTimer.h
+//  SeekingView.h
 //  goSeek
 //
 //  Created by Corynne Dech on 4/11/15.
@@ -7,17 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SeekerWaitView.h"
 
+@class SeekerTimer;
 @class goSeekConnection;
-@class SeekerWaitView;
-@class SeekingView;
 
-@interface SeekerTimer : UIViewController{
+@interface SeekingView : UIViewController{
     @public goSeekConnection *server;
-    @public SeekingView *seekingView;
 }
 
-- (void) updateCountdown: (NSString *)countdown;
+- (void) updatePlayersLeft: (NSString *)playersLeft;
 
 @end
 
