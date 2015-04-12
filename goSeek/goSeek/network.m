@@ -73,9 +73,9 @@
         @try {
             HiderWaitView *hiderWaitView = [_mainView getHiderWaitView];
             [hiderWaitView updatePlayersLeft :e.data];
-            
-            HidingView *hidingView = [_mainView getHidingView];
-            [hidingView updatePlayersLeft :e.data];
+//            
+//            HidingView *hidingView = [_mainView getHidingView];
+//            [hidingView updatePlayersLeft :e.data];
         }
         @catch (NSException *exception) {
         }
