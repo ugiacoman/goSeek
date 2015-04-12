@@ -24,7 +24,7 @@
 
 
 @implementation goSeekConnection
-
+bool stillWait = true;
 - (id)init:(ViewController *)mainView{
     _mainView = mainView;
     return self;
@@ -44,8 +44,17 @@
         NSLog(@"%@: %@", e.event, e.data);
         
         
-        HiderWaitView *hiderWaitView = [_mainView getHiderWaitView];
-        [hiderWaitView performSegueWithIdentifier:@"startHiderTimer" sender:hiderWaitView];
+        if(stillWait == true){
+            HiderWaitView *hiderWaitView = [_mainView getHiderWaitView];
+            [hiderWaitView performSegueWithIdentifier:@"startHiderTimer" sender:hiderWaitView];
+            stillWait = false;
+        }
+        else{
+            NSLog(@"IN ELSE");
+            HiderTimer *hiderTimer = [_mainView getHiderTimer];
+            [hiderTimer updateCountdown :e.data];
+
+        }
 //        @try{
 //            HiderTimer *hiderTimer = [_mainView getHiderTimer];
 //            [hiderTimer updateCountdown :e.data];

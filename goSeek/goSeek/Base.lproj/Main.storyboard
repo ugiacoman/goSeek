@@ -400,7 +400,7 @@
                                     <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="NZR-vu-hQg">
                                         <rect key="frame" x="65" y="234" width="210" height="223"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="center" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7s-q2-cG1">
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7s-q2-cG1">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="85" id="XYI-hK-H2O"/>

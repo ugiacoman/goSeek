@@ -39,6 +39,7 @@ bool goingBack;
 
 - (void) updateCountdown: (NSString *)countdown{
     _timerText.text = countdown;
+    NSLog(@"countdown RECIEVED: %@", countdown);
     if ([countdown isEqual: @"0"]){
         NSLog(@"countdown finished");
         [self performSegueWithIdentifier:@"startHiding" sender:self];
