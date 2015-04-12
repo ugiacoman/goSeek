@@ -17,32 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField autoresizesSubviews="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="ENTER GAME CODE" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="39" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="E7y-cP-aVR">
-                                <rect key="frame" x="16" y="117" width="287" height="30"/>
-                                <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="join"/>
-                                <connections>
-                                    <action selector="gameCodeField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="Dsu-8R-boH"/>
-                                    <action selector="returnKeyButton:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="Lse-Hf-KLE"/>
-                                    <segue destination="LLN-4g-JH7" kind="modal" id="Jda-nc-FzR"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVO-E7-t0r">
-                                <rect key="frame" x="134" y="234" width="52" height="46"/>
+                                <rect key="frame" x="134" y="236" width="52" height="46"/>
                                 <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
                                 <color key="textColor" red="0.93947998391187071" green="1" blue="0.63293097055436598" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nea-5L-H5D">
-                                <rect key="frame" x="20" y="128" width="281" height="41"/>
+                                <rect key="frame" x="20" y="123" width="281" height="54"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="_________________________________">
+                                    <fragment content="__________">
                                         <attributes>
-                                            <color key="NSColor" red="0.21839593518366904" green="0.2548466697662074" blue="0.3857520517676768" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="Avenir-Roman"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <color key="NSColor" red="0.54464490722314274" green="0.2548466697662074" blue="0.2972189514387294" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="55" name="Avenir-Roman"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -61,6 +49,18 @@
                                     <segue destination="d2R-Sz-Y42" kind="modal" identifier="seekerStart" id="71b-eY-z6W"/>
                                 </connections>
                             </button>
+                            <textField autoresizesSubviews="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="ENTER GAME CODE" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="39" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="E7y-cP-aVR">
+                                <rect key="frame" x="17" y="28" width="287" height="211"/>
+                                <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="join"/>
+                                <connections>
+                                    <action selector="gameCodeField:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="Dsu-8R-boH"/>
+                                    <action selector="returnKeyButton:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="Lse-Hf-KLE"/>
+                                    <segue destination="LLN-4g-JH7" kind="modal" id="Jda-nc-FzR"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40784313725490196" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -187,12 +187,6 @@
                                 <color key="textColor" red="1" green="0.40623837489999998" blue="0.33083136099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="players are hiding" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYg-A2-U4p">
-                                <rect key="frame" x="64" y="265" width="192" height="106"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJP-bi-2VV">
                                 <rect key="frame" x="19" y="481" width="283" height="67"/>
                                 <color key="backgroundColor" red="0.15758763840000001" green="0.34150306429999999" blue="0.56579466540000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -205,6 +199,12 @@
                                     <action selector="marcoButton:" destination="twi-2V-H7y" eventType="touchUpInside" id="zqI-hM-Sxn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="players are hiding" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYg-A2-U4p">
+                                <rect key="frame" x="78" y="279" width="164" height="106"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.76981329625207373" green="1" blue="0.53766333089777696" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -354,7 +354,7 @@
                                     <segue destination="vXZ-lx-hvc" kind="modal" id="hhL-Tt-a4G"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="NM1-br-q0S">
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="NM1-br-q0S">
                                 <rect key="frame" x="65" y="207" width="210" height="223"/>
                             </imageView>
                         </subviews>
@@ -397,10 +397,10 @@
                                         <color key="textColor" red="0.6577594188" green="1" blue="0.96514499539999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="NZR-vu-hQg">
+                                    <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timer" translatesAutoresizingMaskIntoConstraints="NO" id="NZR-vu-hQg">
                                         <rect key="frame" x="65" y="234" width="210" height="223"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="center" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7s-q2-cG1">
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7s-q2-cG1">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="85" id="XYI-hK-H2O"/>
@@ -420,6 +420,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="backButton" destination="P7s-q2-cG1" id="B0N-Ls-Dh0"/>
                         <outlet property="timerText" destination="cAv-Co-PdJ" id="0E4-Km-r89"/>
@@ -442,12 +443,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GO HIDE!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umi-XL-hrs">
-                                <rect key="frame" x="24" y="71" width="273" height="107"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="53"/>
-                                <color key="textColor" red="0.1042559686" green="0.1189132701" blue="0.3857520518" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-YH-MsO">
                                 <rect key="frame" x="19" y="481" width="283" height="67"/>
                                 <color key="backgroundColor" red="1" green="0.48851602570000002" blue="0.35455104729999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -457,12 +452,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="players are hiding" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqX-k9-kMM">
-                                <rect key="frame" x="64" y="286" width="192" height="106"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lur-ip-W80">
                                 <rect key="frame" x="0.0" y="0.0" width="85" height="74"/>
                                 <state key="normal" image="test">
@@ -476,9 +465,21 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuN-GC-9xy">
-                                <rect key="frame" x="69" y="224" width="169" height="106"/>
+                                <rect key="frame" x="76" y="224" width="169" height="106"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="54"/>
                                 <color key="textColor" red="1" green="0.40623837489999998" blue="0.33083136099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GO HIDE!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umi-XL-hrs">
+                                <rect key="frame" x="24" y="69" width="273" height="107"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="53"/>
+                                <color key="textColor" red="0.1042559686" green="0.1189132701" blue="0.3857520518" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="players are hiding" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqX-k9-kMM">
+                                <rect key="frame" x="80" y="286" width="161" height="106"/>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.12673709389999999" blue="0.46729008840000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -491,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3n-Uj-y1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1336" y="-113"/>
+            <point key="canvasLocation" x="1336" y="-124"/>
         </scene>
     </scenes>
     <resources>
@@ -504,7 +505,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mA8-Mg-Oor"/>
-        <segue reference="iui-S9-Xq2"/>
+        <segue reference="wg9-RN-out"/>
+        <segue reference="Yyi-il-vjg"/>
     </inferredMetricsTieBreakers>
 </document>

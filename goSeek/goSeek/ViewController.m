@@ -113,8 +113,8 @@ int gameCount = 0;
 - (void)viewDidLoad {
     UIImageView *animatedSplashScreen  = [[UIImageView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     [self.view addSubview:animatedSplashScreen];
-    animatedSplashScreen.animationImages= [NSArray arrayWithObjects:[UIImage imageNamed:@"1.png"],[UIImage imageNamed:@"2.png"],[UIImage imageNamed:@"3.png"],[UIImage imageNamed:@"4.png"], nil];
-    animatedSplashScreen.animationRepeatCount=5;
+    animatedSplashScreen.animationImages= [NSArray arrayWithObjects:[UIImage imageNamed:@"1.png"],[UIImage imageNamed:@"2.png"],[UIImage imageNamed:@"3.png"],[UIImage imageNamed:@"4.png"], [UIImage imageNamed:@"4.png"], nil];
+    animatedSplashScreen.animationRepeatCount=4;
     animatedSplashScreen.animationDuration=.5;
     [animatedSplashScreen startAnimating];
     [self performSelector:@selector(hideSplash:) withObject:animatedSplashScreen afterDelay:5.0];
