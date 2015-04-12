@@ -30,9 +30,10 @@
     return self;
 }
 
-- (void)subscribeToServerHider {
-    
-    NSURL *serverURL = [NSURL URLWithString:@"http://45.55.188.238:5000/polo"];
+- (void)subscribeToServerHider :(NSString*) roomCode{
+    NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/polo?roomcode="];
+    [requestURL appendString:roomCode];
+    NSURL *serverURL = [NSURL URLWithString:requestURL];
     
     EventSource *sourceCountDown = [EventSource eventSourceWithURL:serverURL];
     [sourceCountDown addEventListener:@"COUNTDOWN" handler:^(Event *e) {
@@ -63,7 +64,9 @@
 }
 
 - (void)subscribeToServerSeeker{
-    NSURL *serverURL = [NSURL URLWithString:@"http://45.55.188.238:5000/seeker"];
+    NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/seeker?roomcode="];
+    [requestURL appendString:_roomcode];
+    NSURL *serverURL = [NSURL URLWithString:requestURL];
     
     EventSource *sourceCountdown = [EventSource eventSourceWithURL:serverURL];
     [sourceCountdown addEventListener:@"COUNTDOWN" handler:^(Event *e) {
@@ -94,7 +97,9 @@
 - (void)requestAddPlayer{
     // Requests server to send out new roomcode
     // picked up by subscribers, not this method
-    NSURLRequest *requestAddPlayer = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://45.55.188.238:5000/add_player"]];
+    NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/add_player?roomcode="];
+    [requestURL appendString:_roomcode];
+    NSURLRequest *requestAddPlayer = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
     
     
     NSURLConnection *connAddPlayer = [[NSURLConnection alloc] initWithRequest:requestAddPlayer delegate:self];
@@ -113,7 +118,9 @@
 - (void)requestMarco{
     // Requests server to send out marco
     // picked up by subscribers
-    NSURLRequest *requestMarco = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://45.55.188.238:5000/marco"]];
+    NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/marco?roomcode="];
+    [requestURL appendString:_roomcode];
+    NSURLRequest *requestMarco = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
     
     NSURLConnection *connMarco = [[NSURLConnection alloc] initWithRequest:requestMarco delegate:self];
 }
@@ -122,15 +129,18 @@
     // Request CountDown, time determined by server
     // Server will send out time updates every second to
     // all subscribers
-    
-    NSURLRequest *requestCountDown = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://45.55.188.238:5000/countdown"]];
+    NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/countdown?roomcode="];
+    [requestURL appendString:_roomcode];
+    NSURLRequest *requestCountDown = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
     
     NSURLConnection *connCountDown = [[NSURLConnection alloc] initWithRequest:requestCountDown delegate:self];
 }
 
 - (void)requestClose{
     // Request server to close connections
-    NSURLRequest *requestClose = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://45.55.188.238:5000/close"]];
+    NSMutableString *requestURL = [NSMutableString stringWithString:@"http://45.55.188.238:5000/close?roomcode="];
+    [requestURL appendString:_roomcode];
+    NSURLRequest *requestClose = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
     
     NSURLConnection *connClose = [[NSURLConnection alloc] initWithRequest:requestClose delegate:self];
     
@@ -153,6 +163,7 @@
     if (temp != nil){
         _roomcode = temp;
         NSLog(_roomcode);
+        [self subscribeToServerSeeker];
     }
 
     @try{
